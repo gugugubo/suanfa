@@ -10,6 +10,11 @@ import java.util.Random;
  **/
 public class timu35 {
 
+    /**
+     * 使用迭代的方式
+     * @param pHead
+     * @return
+     */
     public RandomListNode Clone(RandomListNode pHead) {
         if(pHead == null){
             return pHead;

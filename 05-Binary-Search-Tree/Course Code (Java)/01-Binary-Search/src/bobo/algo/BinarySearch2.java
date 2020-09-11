@@ -34,7 +34,7 @@ public class BinarySearch2 {
     // 测试递归的二分查找算法
     public static void main(String[] args) {
 
-        int N = 1000000;
+        int N = 100;
         Integer[] arr = new Integer[N];
         for(int i = 0 ; i < N ; i ++)
             arr[i] = new Integer(i);
@@ -44,6 +44,7 @@ public class BinarySearch2 {
         // 对[N...2*N)区间的数值使用二分查找，因为这些数字不在arr中，结果为-1
         for(int i = 0 ; i < 2*N ; i ++) {
             int v = BinarySearch2.find(arr, new Integer(i));
+            System.out.println(v);
             if (i < N)
                 assert v == i;
             else

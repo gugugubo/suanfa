@@ -3,6 +3,7 @@
 /// Time   : 2018-05-29
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 // PreOrder Morris Traversal
@@ -10,6 +11,16 @@ import java.util.List;
 // Space Complexity: O(1)
 public class PreorderSolution {
 
+
+    public Object getValue() {
+        return super.getValue();
+    }
+
+    public Date getValue() {
+        return super.getValue();
+    }
+    
+    
     public List<Integer> preorderTraversal(TreeNode root) {
 
         ArrayList<Integer> res = new ArrayList<Integer>();

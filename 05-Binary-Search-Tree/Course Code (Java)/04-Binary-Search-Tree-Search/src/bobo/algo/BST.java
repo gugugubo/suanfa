@@ -1,7 +1,13 @@
 package bobo.algo;
 
-// 二分搜索树
-// 由于Key需要能够进行比较，所以需要extends Comparable<Key>
+
+/**
+ * 二分搜索树
+ * 由于Key需要能够进行比较，所以需要extends Comparable<Key>
+ * 添加插入 查找  的方法    
+ * @param <Key>
+ * @param <Value>
+ */
 public class BST<Key extends Comparable<Key>, Value> {
 
     // 树中的节点为私有的类, 外界不需要了解二分搜索树节点的具体实现

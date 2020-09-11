@@ -2,8 +2,11 @@ package bobo.algo;
 
 import java.util.LinkedList;
 
-// 二分搜索树
-// 由于Key需要能够进行比较，所以需要extends Comparable<Key>
+/**
+ * 增加删除任意节点
+ * @param <Key>
+ * @param <Value>
+ */
 public class BST<Key extends Comparable<Key>, Value> {
 
     // 树中的节点为私有的类, 外界不需要了解二分搜索树节点的具体实现
@@ -255,8 +258,16 @@ public class BST<Key extends Comparable<Key>, Value> {
         return node;
     }
 
-    // 删除掉以node为根的二分搜索树中键值为key的节点, 递归算法
-    // 返回删除节点后新的二分搜索树的根
+
+
+    /**
+     * 删除掉以node为根的二分搜索树中键值为key的节点, 递归算法  返回删除节点后新的二分搜索树的根
+     * 在被删除节点的右子树中找到一个最小的节点来替换被删除节点
+     * 或者在被删除节点的左子树中找到一个最大的节点来替换被删除节点
+     * @param node
+     * @param key
+     * @return
+     */
     Node remove(Node node, Key key){
 
         if( node == null )

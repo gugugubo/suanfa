@@ -69,6 +69,5 @@ public class MaxHeap<Item extends Comparable> {
         for( int i = 0 ; i < N ; i ++ )
             maxHeap.insert( new Integer((int)(Math.random() * M)) );
         System.out.println(maxHeap.size());
-
     }
 }

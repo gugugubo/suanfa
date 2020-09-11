@@ -1,7 +1,11 @@
 package bobo.algo;
 
-// 二分搜索树
-// 由于Key需要能够进行比较，所以需要extends Comparable<Key>
+/**
+ * 此节讲的二分搜索树都是不支持重复的元素的，如果是重复的元素则，认为是更新操作
+ * @param <Key>
+ * @param <Value>
+ */
+
 public class BST<Key extends Comparable<Key>, Value> {
 
     // 树中的节点为私有的类, 外界不需要了解二分搜索树节点的具体实现

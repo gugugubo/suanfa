@@ -9,9 +9,10 @@ public class Main {
     public static void main(String[] args) {
 
         // 使用圣经作为我们的测试用例
-        String filename = "bible.txt";
+        String filename = "C:\\Users\\古春波\\Desktop\\bible.txt";
         Vector<String> words = new Vector<String>();
-        if(FileOperations.readFile(filename, words)){
+        boolean b = FileOperations.readFile(filename, words);
+        if(b){
             System.out.println( "There are totally " + words.size() + " words in " + filename );
             System.out.println();
 
@@ -31,10 +32,15 @@ public class Main {
             }
 
             // 输出圣经中god一词出现的频率
-            if( bst.contain("god") )
+            if( bst.contain("god") ){
+                System.out.println(2323);
                 System.out.println("'god' : " + bst.search("god") );
-            else
+            }
+        
+            else{
+                System.out.println(2323);
                 System.out.println("No word 'god' in " + filename);
+            }
 
             long endTime = System.currentTimeMillis();
             System.out.println("BST , time: " + (endTime - startTime) + "ms.");
@@ -66,6 +72,9 @@ public class Main {
             endTime = System.currentTimeMillis();
             System.out.println("SST , time: " + (endTime - startTime) + "ms.");
 
+        }
+        else {
+            System.out.println(232323);
         }
     }
 }
