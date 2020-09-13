@@ -23,9 +23,9 @@ public class timu34 {
     LinkedList<Integer> path = new LinkedList<>();
 
     /**
-     * 使用递归实现，dfs先序便离开
-     * 时间复杂度 O(N)O(N)O(N) ： NNN 为二叉树的节点数，先序遍历需要遍历所有节点。
-     * 空间复杂度 O(N)O(N)O(N) ： 最差情况下，即树退化为链表时，path 存储所有树节点，使用 O(N)O(N)O(N) 额外空间。
+     * 使用递归实现，dfs先序遍历
+     * 时间复杂度 O(N) ：N为二叉树的节点数，先序遍历需要遍历所有节点。
+     * 空间复杂度 O(N) ：最差情况下，即树退化为链表时，path 存储所有树节点，使用 O(N)额外空间。
      * @param root
      * @param sum
      * @return

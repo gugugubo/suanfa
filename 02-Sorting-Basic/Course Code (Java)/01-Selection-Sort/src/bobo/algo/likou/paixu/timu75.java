@@ -4,8 +4,8 @@ package bobo.algo.likou.paixu;
  * @Author 古春波
  * @Description 75. 颜色分类   https://leetcode-cn.com/problems/sort-colors/
  * 解法参考快速排序的三路排序算法
- * 时间复杂度 :由于对长度 NNN的数组进行了一次遍历，时间复杂度为O(N)O(N)O(N) 。
- * 空间复杂度 :由于只使用了常数空间，空间复杂度为O(1)O(1)O(1) 。
+ * 时间复杂度 :由于对长度 N的数组进行了一次遍历，时间复杂度为O(N) 。
+ * 空间复杂度 :由于只使用了常数空间，空间复杂度为O(1) 。
  * @Date 2020/9/2 21:05
  * @Version 1.0
  **/
