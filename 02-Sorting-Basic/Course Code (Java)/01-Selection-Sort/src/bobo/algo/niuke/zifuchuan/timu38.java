@@ -10,11 +10,13 @@ public class timu38 {
 
 
     /**
-     * 使用递归
+     * 回溯法
      * @param s
      * @return
      */
     public String[] permutation(String s) {
+        
+        
         return null;
     }
     
