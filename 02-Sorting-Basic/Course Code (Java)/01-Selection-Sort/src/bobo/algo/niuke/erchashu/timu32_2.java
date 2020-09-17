@@ -74,9 +74,6 @@ public class timu32_2 {
         return result;
         
     }
-
-
-
     public void levelHelper(List<List<Integer>> result , TreeNode root , int height){
         if (root == null){return ;}
 

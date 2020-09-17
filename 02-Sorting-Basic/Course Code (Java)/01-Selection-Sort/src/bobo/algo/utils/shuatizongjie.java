@@ -9,11 +9,11 @@ package bobo.algo.utils;
 public class shuatizongjie {
 
     /** 常见算法思想
-     * 回溯法    timu38  timu34
+     * 回溯法    niubi.timu38  niubi.timu34
      * 
      * 动态规划  
      * 
-     * 优先状态机  timu20
+     * 优先状态机  niubi.timu20
      * 
      * 分治法
      *
@@ -21,9 +21,9 @@ public class shuatizongjie {
      */
 
     /** 常见技巧
-     *  双指针  快排  timu58_1
+     *  双指针  快排  niubi.timu58_1
      *  
-     *  滑动窗口  timu59_1
+     *  滑动窗口  niubi.timu59_1
      *  
      *  数组下标法
      *  

@@ -16,7 +16,14 @@ public class timu07 {
     static HashMap<Integer, Integer> map = new HashMap<>();
 
 
-
+    /**
+     * 使用递归
+     * 前序遍历的第一个是根节点
+     * 中序遍历中找到这个根节点，然后这个根节点左边的值都是左子树的节点，右子树的值都是右子树的节点；
+     * @param preorder
+     * @param inorder
+     * @return
+     */
     public static TreeNode  buildTree(int[] preorder, int[] inorder) {
         for (int i=0;i<preorder.length;i++){
             map.put(inorder[i],i);
@@ -47,9 +54,8 @@ public class timu07 {
 
 
     /**
-     * 时间复杂度 O(N) ： NNN 为树的节点数量。初始化 HashMap 需遍历 inorder ，占用 O(N) ；递归共建立 N 个节点，每层递归中的节点建立、搜索操作占用 O(1) ，因此递归占用 O(N) 。
+     * 时间复杂度 O(N) ： N 为树的节点数量。初始化 HashMap 需遍历 inorder ，占用 O(N) ；递归共建立 N 个节点，每层递归中的节点建立、搜索操作占用 O(1) ，因此递归占用 O(N) 。
      * （最差情况为所有子树只有左节点，树退化为链表，此时递归深度 O(N) ；平均情况下递归深度 O(log2N)）。
-     *
      * 空间复杂度 O(N) ： HashMap 使用 O(N) 额外空间；递归操作中系统需使用 O(N) 额外空间。
      *
      * @param preorder

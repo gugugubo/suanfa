@@ -9,9 +9,18 @@ package bobo.algo.niuke.erchashu;
  **/
 public class timu26 {
 
+    /**
+     * 使用递归解决问题
+     * isSubStructure函数是判断A是不是B的子树的子结构
+     * recur函数是判断A是不是B的子结构
+     * @param A
+     * @param B
+     * @return
+     */
     public boolean isSubStructure(TreeNode A, TreeNode B) {
         return   (A != null && B != null) && (recur(A,B) || isSubStructure(A.left,B) || isSubStructure(A.right,B));
     }
+
 
     boolean recur(TreeNode A, TreeNode B){
         if (B == null){
