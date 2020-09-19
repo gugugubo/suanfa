@@ -9,7 +9,7 @@ package bobo.algo.utils;
 public class shuatizongjie {
 
     /** 常见算法思想
-     * 回溯法    niubi.timu38  niubi.timu34
+     * 回溯法    niuke.timu38  niuke.timu34   排列问题 likou.timu17  likou.timu47  组合问题
      * 
      * 动态规划  
      * 
