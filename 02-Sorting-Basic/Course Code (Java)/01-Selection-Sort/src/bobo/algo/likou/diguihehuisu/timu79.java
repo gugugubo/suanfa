@@ -8,13 +8,25 @@ package bobo.algo.likou.diguihehuisu;
  * https://leetcode-cn.com/problems/word-search/
  **/
 public class timu79 {
+    /**
+     * 控制四个方向的遍历
+     */
     int[][] direction = {{0,1} , {1,0} , {0,-1} , {-1, 0}} ;
     char[][] board ;
     String word ;
     int totalx ;
     int totaly ;
+    /**
+     * 判断是否访问过
+     */
     boolean[][] visited ;
-    
+
+    /**
+     * 图的递归和回溯
+     * @param board
+     * @param word
+     * @return
+     */
     public boolean exist(char[][] board, String word) {
         this.board = board;
         this.word = word;
@@ -62,8 +74,6 @@ public class timu79 {
             }
             visited[startx][starty] = false;
         }
-        
-        
         return false;
     }
     
