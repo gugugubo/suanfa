@@ -13,7 +13,7 @@ public class shuatizongjie {
      * 
      * 动态规划  
      * 
-     * 优先状态机  niubi.timu20
+     * 优先状态机  niuke.timu20
      * 
      * 分治法
      *

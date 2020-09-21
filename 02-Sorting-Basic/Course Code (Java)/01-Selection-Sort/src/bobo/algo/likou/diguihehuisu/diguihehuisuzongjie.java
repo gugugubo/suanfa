@@ -2,14 +2,14 @@ package bobo.algo.likou.diguihehuisu;
 
 /**
  * @Author 古春波
- * @Description TODO
+ * @Description 
  * @Date 2020/9/19 20:44
  * @Version 1.0
  **/
 public class diguihehuisuzongjie {
 
     /**
-     * 回溯法：回溯是递归的特性，一般说进行了元素的重置才是回溯
+     * 回溯法：回溯是递归的特性，一般说进行了元素的重置才是回溯(注意元素之间会相互影响的问题)
      * 
      * 排列  17   47（相比17，元素之间会相互影响）   
      * 组合  77
