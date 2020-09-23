@@ -38,6 +38,11 @@ public class timu70 {
         return memo[n];
     }
 
+    /**
+     * 自下向上
+     * @param n
+     * @return
+     */
     public int climbStairs2(int n) { 
         this.memo = new int[ n +1 ];
         Arrays.fill(memo, -1);

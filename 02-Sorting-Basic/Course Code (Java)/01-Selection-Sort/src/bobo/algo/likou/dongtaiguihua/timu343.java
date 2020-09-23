@@ -20,7 +20,12 @@ public class timu343 {
         Arrays.fill(memo,-1);
         return recur(n);
     }
-    // 将n进行分割(至少分割两部分), 可以获得的最大乘积
+
+    /**
+     * 将n进行分割(至少分割两部分), 可以获得的最大乘积
+     * @param n
+     * @return
+     */
     private int recur(int n) {
         if ( n ==2 ){
             return 1;
@@ -34,11 +39,9 @@ public class timu343 {
             int i3 = memo[n];
             if (i1 < i2){
                 System.out.println("牛逼");
-            }else {
             }
             memo[n] = max2( i2,i1 , i3);
         }
-        
         return memo[n];
     }
     private int max2(int i, int i1, int i2) {
