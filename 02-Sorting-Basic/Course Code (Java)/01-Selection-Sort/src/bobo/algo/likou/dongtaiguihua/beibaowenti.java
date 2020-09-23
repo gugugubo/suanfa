@@ -72,15 +72,10 @@ public class beibaowenti {
         if (w == null || v == null || w.length == 0 || v.length == 0 || w.length != v.length){
             return 0;
         }
-        this.w = w;
-        this.v = v;
         memo = new int[w.length][c + 1];
-        
-        memo[0][0] =  0;
-        
         for (int i = 0 ; i<= c ; i ++){
-            if (c > w[i]){
-                memo[0][i] = v[i]; 
+            if (i > w[0]){
+                memo[0][i] = v[0]; 
             }else {
                 memo[0][i] = 0;
             }
@@ -90,7 +85,7 @@ public class beibaowenti {
             for (int j = 0 ; j <= c ; j ++){
                 int maxValue = memo[i -1 ][j];
                 if (w[i] <= j){
-                    maxValue = Math.max(maxValue, v[j] + memo[i - 1][j - w[j]]);
+                    maxValue = Math.max(maxValue, v[i] + memo[i - 1][j - w[i]]);
                 }
                 memo[i][j] = maxValue;
             }
