@@ -68,6 +68,13 @@ public class beibaowenti {
         return memo[index][c];
     }
 
+    /**
+     * 使用动态规划
+     * @param w
+     * @param v
+     * @param c
+     * @return
+     */
     public int knapspack2(int[] w, int[] v , int c) {
         if (w == null || v == null || w.length == 0 || v.length == 0 || w.length != v.length){
             return 0;
@@ -80,7 +87,38 @@ public class beibaowenti {
                 memo[0][i] = 0;
             }
         }
-        
+        for(int i = 1; i < w.length; i ++){
+            for (int j = 0 ; j <= c ; j ++){
+                int maxValue = memo[ (i -1) % 2 ][j];
+                if (w[i] <= j){
+                    maxValue = Math.max(maxValue, v[i] + memo[ (i - 1) % 2][j - w[i]]);
+                }
+                memo[i %2 ][j] = maxValue;
+            }
+        }
+        return memo[(w.length-1) % 2][c];
+    }
+
+
+    /**
+     * 减少二维数组的空间，只需要两行数组即可
+     * @param w
+     * @param v
+     * @param c
+     * @return
+     */
+    public int knapspack3(int[] w, int[] v , int c) {
+        if (w == null || v == null || w.length == 0 || v.length == 0 || w.length != v.length){
+            return 0;
+        }
+        memo = new int[w.length][c + 1];
+        for (int i = 0 ; i<= c ; i ++){
+            if (i > w[0]){
+                memo[0][i] = v[0];
+            }else {
+                memo[0][i] = 0;
+            }
+        }
         for(int i = 1; i < w.length; i ++){
             for (int j = 0 ; j <= c ; j ++){
                 int maxValue = memo[i -1 ][j];
@@ -90,9 +128,32 @@ public class beibaowenti {
                 memo[i][j] = maxValue;
             }
         }
-        
         return memo[w.length-1][c];
     }
 
-
+    /**
+     * 使用一维数组就可以完成
+     * @param w
+     * @param v
+     * @param c
+     * @return
+     */
+    public int knapspack4(int[] w, int[] v , int c) {
+        int[] memor ;
+        if (w == null || v == null || w.length == 0 || v.length == 0 || w.length != v.length){
+            return 0;
+        }
+        memor = new int[c + 1];
+        for (int i = 0 ; i<= c ; i ++){
+            memor[i] = (i >= w[0] ? v[0] : 0);
+        }
+        for(int i = 1; i < w.length; i ++){
+            for (int j = c ; j >= w[i] ; j --){
+                int maxValue = memor[j];
+                maxValue = Math.max(maxValue, v[i] + memor[j - w[i]]);
+                memor[j] = maxValue;
+            }
+        }
+        return memor[c];
+    }
 }
