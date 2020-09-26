@@ -2,7 +2,7 @@ package bobo.algo.likou.diguihehuisu;
 
 /**
  * @Author 古春波
- * @Description 
+ * @Description 回溯的总结
  * @Date 2020/9/19 20:44
  * @Version 1.0
  **/
@@ -19,6 +19,8 @@ public class diguihehuisuzongjie {
      * 
      * 
      * 待做： 排列  93  131  47  39 40  组合  216  78   90   401     floodfill 130 417   n皇后优化 52  37
+     * 
+     * 讲义： https://leetcode-cn.com/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/
      */
     
     

@@ -58,10 +58,7 @@ public class timu17 {
 //                tempString = tempString + ch;这样是不行的，结果错误； tempString应该保存本层递归的路径
                 recur(index + 1, tempString + ch);
             }
-        }    
-        
-     
-    
+        }
     }
 
     public static void main(String[] args) {
