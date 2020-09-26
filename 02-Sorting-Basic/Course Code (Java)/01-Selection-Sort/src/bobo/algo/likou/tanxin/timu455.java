@@ -3,6 +3,7 @@ package bobo.algo.likou.tanxin;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,17 +33,24 @@ public class timu455 {
     public int findContentChildren(int[] g, int[] s) {
         // 使用java8 Stream流 将数组转换成 集合
         List<Integer> gList = Arrays.stream(g).boxed().collect(Collectors.toList());
-        // 默认升序
-        Collections.sort(gList);
-        // 通过 reverse 翻转集合中的元素, 实现降序
-        Collections.reverse(gList);
 
         // 使用java8 Stream流 将数组转换成 集合
         List<Integer> sList = Arrays.stream(s).boxed().collect(Collectors.toList());
-        // 默认升序
-        Collections.sort(sList);
-        // 通过 reverse 翻转集合中的元素, 实现降序
-        Collections.reverse(sList);
+
+
+        Collections.sort(sList, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+
+        Collections.sort(gList, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
         
         int gIndex = 0 ; int sIndex = 0 ;
         int totalCount = 0;
@@ -59,6 +67,40 @@ public class timu455 {
         return totalCount;
     }
 
+
+    public int findContentChildren2(int[] g, int[] s) {
+        Arrays.sort(g);
+        Arrays.sort(s);
+        int gi = g.length - 1, si = s.length - 1;
+        int res = 0;
+        while(gi >= 0 && si >= 0){
+            if(s[si] >= g[gi]){
+                res ++;
+                si --;
+            }
+            gi --;
+        }
+
+        return res;
+    }
+
+    public int findContentChildren3(int[] g, int[] s) {
+
+        Arrays.sort(g);
+        Arrays.sort(s);
+
+        int gi = 0, si = 0;
+        int res = 0;
+        while(gi < g.length && si < s.length){
+            if(s[si] >= g[gi]){
+                res ++;
+                gi ++;
+            }
+            si ++;
+        }
+
+        return res;
+    }
 
     public static void main(String[] args) {
         int [] nums = {1,2,3};
