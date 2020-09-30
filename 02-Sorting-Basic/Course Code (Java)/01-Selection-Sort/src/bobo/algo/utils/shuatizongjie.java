@@ -18,12 +18,13 @@ public class shuatizongjie {
      * 分治法
      *
      * 贪婪法
+     * 
      */
 
     /** 常见技巧
-     *  双指针  快排  niubi.timu58_1
+     *  双指针  快排  niuke.timu58_1
      *  
-     *  滑动窗口  niubi.timu59_1
+     *  滑动窗口  niuke.timu59_1  likou.timu219
      *  
      *  数组下标法
      *  

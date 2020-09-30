@@ -85,11 +85,8 @@ public class timu435 {
 
     public static void main(String[] args) {
         int[][] ints = {{1,100}, {11,22}, {1,11}, {2,12}};
-
         int i1 = new timu435().eraseOverlapIntervals2(ints);
         System.out.println(i1);
-        
-        
     }
     
 }
