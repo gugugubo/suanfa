@@ -1,15 +1,26 @@
-package bobo.algo;
+package bobo.algo.likou.bingchaji;
 
-// 我们的第五版Union-Find
+/**
+ * 我们的第五版Union-Find，对比第四版，修改了find()函数
+ */
 public class UnionFind5 {
 
-    // rank[i]表示以i为根的集合所表示的树的层数
-    // 在后续的代码中, 我们并不会维护rank的语意, 也就是rank的值在路径压缩的过程中, 有可能不在是树的层数值
-    // 这也是我们的rank不叫height或者depth的原因, 他只是作为比较的一个标准
-    // 关于这个问题，可以参考问答区：http://coding.imooc.com/learn/questiondetail/7287.html
+
+    /**
+     * rank[i]表示以i为根的集合所表示的树的层数
+     * 在后续的代码中, 我们并不会维护rank的语意, 也就是rank的值在路径压缩的过程中, 有可能不在是树的层数值
+     * 这也是我们的rank不叫height或者depth的原因, 他只是作为比较的一个标准
+     * 关于这个问题，可以参考问答区：http://coding.imooc.com/learn/questiondetail/7287.html
+     */
     private int[] rank;
-    private int[] parent; // parent[i]表示第i个元素所指向的父节点
-    private int count;    // 数据个数
+    /**
+     *  parent[i]表示第i个元素所指向的父节点
+     */
+    private int[] parent;
+    /**
+     * 数据个数
+     */
+    private int count;    
 
     // 构造函数
     public UnionFind5(int count){
@@ -23,8 +34,11 @@ public class UnionFind5 {
         }
     }
 
-    // 查找过程, 查找元素p所对应的集合编号
-    // O(h)复杂度, h为树的高度
+
+    /**
+     * 查找过程, 查找元素p所对应的集合编号
+     * O(h)复杂度, h为树的高度
+     */
     private int find(int p){
         assert( p >= 0 && p < count );
 
@@ -35,20 +49,26 @@ public class UnionFind5 {
         }
         return p;
 
-        // path compression 2, 递归算法
+        // path compression 2, 递归算法，可以实现每个树的深度只为2
 //            if( p != parent[p] )
 //                parent[p] = find( parent[p] );
 //            return parent[p];
     }
 
-    // 查看元素p和元素q是否所属一个集合
-    // O(h)复杂度, h为树的高度
+
+    /**
+     * 查看元素p和元素q是否所属一个集合
+     * O(h)复杂度, h为树的高度
+     */
     public boolean isConnected( int p , int q ){
         return find(p) == find(q);
     }
 
-    // 合并元素p和元素q所属的集合
-    // O(h)复杂度, h为树的高度
+
+    /**
+     * 合并元素p和元素q所属的集合
+     * O(h)复杂度, h为树的高度
+     */
     public void unionElements(int p, int q){
 
         int pRoot = find(p);
@@ -67,7 +87,8 @@ public class UnionFind5 {
         }
         else{ // rank[pRoot] == rank[qRoot]
             parent[pRoot] = qRoot;
-            rank[qRoot] += 1;   // 此时, 我维护rank的值
+            // 此时, 我维护rank的值
+            rank[qRoot] += 1;  
         }
     }
 }

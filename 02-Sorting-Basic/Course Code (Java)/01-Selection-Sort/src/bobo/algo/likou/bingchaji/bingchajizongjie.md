@@ -66,7 +66,7 @@ UnionFind2.java
 
 ![1601569471558](https://gitee.com/gu_chun_bo/picture/raw/master/image/20201002002432-937171.png)
 
-![1601569494973](assets/1601569494973.png)
+![1601569494973](https://gitee.com/gu_chun_bo/picture/raw/master/image/20201002002504-60668.png)
 
 ![1601568737206](https://gitee.com/gu_chun_bo/picture/raw/master/image/20201002001219-296817.png)
 
@@ -80,10 +80,31 @@ UnionFind3.java
 
 如果要nnion的话，应该是将7这个子树合并到8子树那里，这样才可以让最新的树的深度最小
 
-![1601569193393](assets/1601569193393.png)
+![1601569193393](https://gitee.com/gu_chun_bo/picture/raw/master/image/20201002001955-195120.png)
 
 
 
 
 
-![1601569692754](assets/1601569692754.png)
+![1601569692754](https://gitee.com/gu_chun_bo/picture/raw/master/image/20201002002813-447801.png)
+
+## 并查集的优化-路径压缩
+
+![1601645317952](assets/1601645317952.png)
+
+
+
+![1601645333715](https://gitee.com/gu_chun_bo/picture/raw/master/image/20201002212856-385065.png)
+
+![1601645347683](https://gitee.com/gu_chun_bo/picture/raw/master/image/20201002212908-20020.png)
+
+
+
+![1601645403457](assets/1601645403457.png)
+
+
+
+
+
+
+

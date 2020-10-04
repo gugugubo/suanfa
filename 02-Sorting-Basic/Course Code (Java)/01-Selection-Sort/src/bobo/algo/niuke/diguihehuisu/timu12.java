@@ -62,11 +62,12 @@ public class timu12 {
                 int newStartx = startx + direction[i][0];
                 int newStarty = starty + direction[i][1];
                 if (ifregion(newStartx,newStarty) && !visited[newStartx][newStarty]){
-                    if (recur(index + 1, newStartx,newStarty)){
+                    if (recur(index + 1, newStartx, newStarty)){
                         return true;
                     }
                 }
             }
+            // 状态重置
             visited[startx][starty] = false;
         }
         
