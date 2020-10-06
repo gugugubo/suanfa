@@ -44,6 +44,7 @@ public class timu70 {
      * @return
      */
     public int climbStairs2(int n) { 
+        
         this.memo = new int[ n +1 ];
         Arrays.fill(memo, -1);
         memo[0] = 1;
