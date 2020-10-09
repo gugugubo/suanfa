@@ -82,8 +82,12 @@ public class timu200 {
         }
 
     public static void main(String[] args) {
-        char[][] board2 ={{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};
-        int abcced2 = new timu200().numIslands(board2);
-        System.out.println(abcced2);
+//        char[][] board2 ={{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};
+//        int abcced2 = new timu200().numIslands(board2);
+//        System.out.println(abcced2);
+        
+        for(int i = 1; i< 10 ;i ++){
+            System.out.println("https://www.bilibili.com/video/BV1oW41167AV?p=4" + i);
+        }
     }
 }
