@@ -30,7 +30,7 @@ public class shuatizongjie {
      *  
      *  数组下标法
      *  
-     *  位运算
+     *  位运算 niuke.timu56_1
      */
 
 
