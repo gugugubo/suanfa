@@ -21,6 +21,8 @@ public class shuatizongjie {
      * 
      * dfs bfs niuke.timu13
      * 
+     * 搜索：niuke.timu11  niuke.timu56_1
+     * 
      */
 
     /** 常见技巧
