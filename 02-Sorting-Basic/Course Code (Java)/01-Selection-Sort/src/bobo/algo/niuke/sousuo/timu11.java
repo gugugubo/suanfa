@@ -48,11 +48,13 @@ public class timu11 {
         while(left < right){
             
             int mid = (left + right) / 2;
-            
+            // 第一种情况是 numbers[mid]<numbers[right] 如下图所示，这说明 numbers[mid]是最小值右侧的元素，因此我们可以忽略二分查找区间的右半部分。
             if (numbers[mid] < numbers[right]){
                 right = mid;
+            // 第二种情况是 numbers[mid]>numbers[right] 如下图所示，这说明 numbers[mid]是最小值左侧的元素，因此我们可以忽略二分查找区间的左半部分。
             }else if (numbers[mid] > numbers[right]){
                 left = mid + 1;
+            // 第三种情况是 numbers[pivot]==numbers[high] 如下图所示，由于重复元素的存在，我们并不能确定 numbers[pivot] 究竟在最小值的左侧还是右侧，因此我们不能莽撞地忽略某一部分的元素。
             }else {
                 right --;
             }
