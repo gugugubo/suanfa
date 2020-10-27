@@ -19,4 +19,34 @@ package bobo.algo.likou.weiyunsuan;
  * @Version 1.0
  **/
 public class timu693 {
+
+
+    /**
+     * 移位运算和异或运算
+     * @param n
+     * @return
+     */
+    public boolean hasAlternatingBits(int n) {
+        // n =         0101   1010
+        // 移位之后变为 0010   1101
+        // 异或之后变为 0111   0111
+        // 这里是算术右移，其实逻辑右移也可以
+        int a = n ^ (n >> 1);
+        // 判断a 是否为 1111
+        return (a & ( a + 1)) == 0;
+    }
+
+    public boolean hasAlternatingBits2(int n) {
+        // n =         0101   1010
+        // 移位之后变为 0010   0101
+        // 异或之后变为 0111   1111
+        // 这里是逻辑右移
+        int a = n ^ (n >>> 1);
+        // 判断a 是否为 1111
+        return (a & ( a + 1)) == 0;
+    }
+
+    public static void main(String[] args) {
+        
+    }
 }

@@ -63,18 +63,16 @@ public class timu190 {
     }
 
     public static void main(String[] args) {
-        int i = new timu190().reverseBits2(43261596);
-        System.out.println(i);
+//        int i = new timu190().reverseBits2(43261596);
+//        System.out.println(i);
         
         int a = 14; 
         int b = 16;
         
-        a = a^ b;
-        System.out.println(a + "---" + b);
+        a = a ^ b;
         b = a ^ b;
-        System.out.println(a + "----" + b);
-        a = a^ b;
+        a = a ^ b;
         
-        System.out.println(a + "----" + b);
+        System.out.println("a = " + a + "----" + "b = " + b);
     }
 }
