@@ -39,6 +39,10 @@ public class timu1 {
         return null;
     }
 
+
+
+    
+
     public static void main(String[] args) {
         int[] ints = {2, 7, 11, 15};
         new timu1().twoSum(ints, 9);
