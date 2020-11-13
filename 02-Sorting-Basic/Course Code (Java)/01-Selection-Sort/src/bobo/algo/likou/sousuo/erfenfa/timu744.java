@@ -15,7 +15,8 @@ public class timu744 {
     public char nextGreatestLetter(char[] letters, char target) {
         int left = 0 ; int right = letters.length -1 ;
         
-        
+        // 我认为下面这个while循环每次跳出的时候必定是  left == right
+        // 因为 进入的时候是left < right , 那么left变大只可能 mid + 1; 除非left==right, 那么left = mid + 1 是不可能大于 right 的, 但是前提条件已经约束了 left < right 
         while (left < right){
             int mid = left + (right - left) /2 ;
             
