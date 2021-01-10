@@ -70,10 +70,14 @@ public class timu416 {
         boolean b = new timu416().canPartition(new int[]{1,5,6
         });
         System.out.println(b);
+
+        int[] coins = new int[]{1,2,3,5};
+        boolean b1 = new timu416().canPartition3(coins);
+        System.out.println(b1);
     }
 
     /**
-     * 自底向上，动态规划
+     * 自底向上，动态规划，使用一维数组
      * @param nums
      * @return
      */
@@ -109,7 +113,79 @@ public class timu416 {
          *     }
          * }
          */
-
+        
         return memor[sum];
+    }
+
+    /**
+     * 动态规划，使用二维数组
+     * @param nums
+     * @return
+     */
+    public boolean canPartition3(int[] nums) {
+        
+        if (nums.length == 0){
+            return false;
+        }
+        int sum = 0;
+        for (int i = 0; i<nums.length; i++){
+            sum += nums[i];
+        }
+        if (sum%2!=0){
+            return false;
+        }
+        boolean[][] dp = new boolean[nums.length+1][sum/2 + 1];
+        for (int i = 0; i<nums.length+1 ; i++){
+            dp[i][0] = true;
+        }
+        for (int i = 1; i<nums.length+1 ; i++){
+            for (int j =1; j<sum/2+1; j++){
+                if (dp[i-1][j]==true){
+                    dp[i][j] = true;
+                }else {
+                    if (j - nums[i-1] >= 0){
+                        dp[i][j] = dp[i-1][j - nums[i-1]];
+                    }else {
+                        dp[i][j] = false;
+                    }
+                }
+            }
+        }
+        return dp[nums.length][sum/2];
+    }
+
+    /**
+     * 动态规划，使用一维数组，自己做的
+     * @param nums
+     * @return
+     */
+    public boolean canPartition4(int[] nums) {
+
+        if (nums.length == 0){
+            return false;
+        }
+        int sum = 0;
+        for (int i = 0; i<nums.length; i++){
+            sum += nums[i];
+        }
+        if (sum%2!=0){
+            return false;
+        }
+        boolean[] dp = new boolean[sum/2 + 1];
+        dp[0] = true;
+        for (int i = 1; i<nums.length+1 ; i++){
+            for (int j =sum/2; j>0; j--){
+                if (dp[j]==true){
+                    dp[j] = true;
+                }else {
+                    if (j - nums[i-1] >= 0){
+                        dp[j] = dp[j - nums[i-1]];
+                    }else {
+                        dp[j] = false;
+                    }
+                }
+            }
+        }
+        return dp[sum/2];
     }
 }

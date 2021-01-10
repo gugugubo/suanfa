@@ -1,7 +1,8 @@
 package com.gdut.gcb.likou.lianbiao;
 
 
-import bobo.algo.niuke.lianbiao.ListNode;
+
+import com.gdut.gcb.niuke.lianbiao.ListNode;
 
 import java.io.BufferedReader;
 import java.io.IOException;

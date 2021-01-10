@@ -1,7 +1,8 @@
 package com.gdut.gcb.likou.lianbiao;
 
-import bobo.algo.niuke.lianbiao.ListNode;
-import bobo.algo.utils.util;
+import com.gdut.gcb.niuke.lianbiao.ListNode;
+import com.gdut.gcb.utils.util;
+import com.gdut.gcb.niuke.lianbiao.ListNode;
 
 /**
  * @Author 古春波

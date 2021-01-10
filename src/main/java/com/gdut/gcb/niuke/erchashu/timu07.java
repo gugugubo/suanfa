@@ -1,6 +1,6 @@
 package com.gdut.gcb.niuke.erchashu;
 
-import bobo.algo.utils.util;
+import com.gdut.gcb.utils.util;
 
 import java.util.HashMap;
 import java.util.Map;

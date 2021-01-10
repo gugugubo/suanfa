@@ -2,7 +2,7 @@ package com.gdut.gcb.niuke.lianbiao;
 
 /**
  * @Author 古春波
- * @Description TODO
+ * @Description 链表
  * @Date 2020/9/7 17:00
  * @Version 1.0
  **/

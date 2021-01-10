@@ -5,7 +5,7 @@ package com.gdut.gcb.niuke.erchashu;
  * @Description 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
  * @Date 2020/9/13 22:02
  * @Version 1.0
- * url https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/
+ * url https://leetcode-cn.com/problems/er-cha-shu-de-zi-jin-gong-gong-zu-xian-lcof/
  **/
 public class timu68_2 {
 

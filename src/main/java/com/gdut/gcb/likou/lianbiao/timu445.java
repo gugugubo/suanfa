@@ -1,10 +1,12 @@
 package com.gdut.gcb.likou.lianbiao;
 
-import bobo.algo.niuke.lianbiao.ListNode;
+
+import com.gdut.gcb.niuke.lianbiao.ListNode;
 
 import java.util.Stack;
 
-import static bobo.algo.utils.util.stringToIntegerArray;
+import static com.gdut.gcb.utils.util.stringToIntegerArray;
+
 
 /**
  * @Author 古春波
