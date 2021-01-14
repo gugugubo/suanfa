@@ -15,7 +15,7 @@ public class timu300 {
     /**
      * 时间复杂度: O(n^2)
      * 空间复杂度: O(n)
-     * 自底向上进行递归
+     * 自底向上进行迭代
      * @param nums  传入的数组
      * @return   子序列长度
      */
@@ -39,6 +39,37 @@ public class timu300 {
         }
         return result;
     }
+
+    /**
+     * 第二次做题
+     * @param nums nums
+     * @return nums
+     */
+    public int lengthOfLIS2(int[] nums) {
+        if (nums.length==0){
+            return 0;
+        }
+        int[] dp = new int[nums.length];
+
+        dp[0] = 1;
+
+        for (int i=1;i<nums.length;i++){
+            for (int j = 0;j<i;j++){
+                if (nums[j]<nums[i]){
+                    dp[i] = Math.max(nums[j],dp[i]);
+                }
+            }
+            dp[i] = dp[i] + 1;
+        }
+        int result =  1;
+        for (int i = 0 ; i< dp.length ; i++){
+            if (dp[i] > result ){
+                result  = dp[i];
+            }
+        }
+        return result;
+    }
+    
     
     
     private void getMaxLength(int[] nums , int[] memo ){
