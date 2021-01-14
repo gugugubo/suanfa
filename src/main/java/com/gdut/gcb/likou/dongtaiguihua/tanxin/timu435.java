@@ -1,4 +1,4 @@
-package com.gdut.gcb.likou.tanxin;
+package com.gdut.gcb.likou.dongtaiguihua.tanxin;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -83,7 +83,35 @@ public class timu435 {
         return intervals.length - res;
     }
 
-    public static void main(String[] args) {
+
+    /**
+     * 再次练习贪心解法
+     * @param intervals
+     * @return
+     */
+    public int eraseOverlapIntervals3(int[][] intervals) {
+        if (intervals.length < 2){
+            return 0;
+        }
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[1] - o2[1];
+            }
+        });
+        
+        int result = 1;
+        int pre = 0;
+        for (int i=1; i<intervals.length ; i++){
+            if (intervals[i][0] >= intervals[pre][1]){
+                result++;
+                pre = i;
+            }
+        }
+        return intervals.length - result;
+    }
+
+        public static void main(String[] args) {
         int[][] ints = {{1,100}, {11,22}, {1,11}, {2,12}};
         int i1 = new timu435().eraseOverlapIntervals2(ints);
         System.out.println(i1);
