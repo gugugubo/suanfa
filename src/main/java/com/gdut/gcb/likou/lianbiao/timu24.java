@@ -7,7 +7,7 @@ import com.gdut.gcb.niuke.lianbiao.ListNode;
  * @Author 古春波
  * @Description 24. 两两交换链表中的节点
  * @Date 2020/9/6 20:31
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu24 {
 

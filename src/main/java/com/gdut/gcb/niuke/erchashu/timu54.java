@@ -8,7 +8,7 @@ import java.util.Queue;
  * @Author 古春波
  * @Description 二叉搜索树的第k大节点
  * @Date 2020/9/13 11:04
- * @Version 1.0
+ * @Version 2.0
  * url https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/
  **/
 public class timu54 {

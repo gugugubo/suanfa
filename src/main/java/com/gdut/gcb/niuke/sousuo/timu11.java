@@ -27,7 +27,6 @@ public class timu11 {
                 k = numbers[i];
             }
         }
-
         return numbers[0];
     }
 
@@ -44,7 +43,7 @@ public class timu11 {
         
         int right = numbers.length -1;
         
-        
+        // [4,5,6,0,1,2,2] 为 [1,2,3,4,5] 
         while(left < right){
             
             int mid = (left + right) / 2;
@@ -58,11 +57,8 @@ public class timu11 {
             }else {
                 right --;
             }
-            
         }
-        
         return numbers[left];
-        
     }
     
     

@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @Author 古春波
  * @Description 斐波那契数列
  * @Date 2020/10/6 21:58
- * @Version 1.0
+ * @Version 2.0
  * url: https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/
  **/
 public class timu10_1 {

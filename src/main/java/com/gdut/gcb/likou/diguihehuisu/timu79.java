@@ -51,6 +51,7 @@ public class timu79 {
         return false;
     }
     
+    // 从board[startx][starty]开始，寻找word[index...word.size]
     private boolean recur(int index, int startx , int starty){
         
         if (index == word.length() - 1){

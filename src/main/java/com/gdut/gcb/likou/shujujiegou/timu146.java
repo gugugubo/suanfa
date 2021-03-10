@@ -1,6 +1,7 @@
 package com.gdut.gcb.likou.shujujiegou;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Objects;
 
 /**
@@ -39,6 +40,11 @@ class LRUCache {
     private int cap;
 
     public LRUCache(int capacity) {
+        LinkedHashMap<timu146,timu146> map22 =new LinkedHashMap();
+        map22.containsKey(timu146.class);
+        timu146 put = map22.put(new timu146(), new timu146());
+        
+        
         this.cap = capacity;
         map = new HashMap<>();
         cache = new DoubleList();

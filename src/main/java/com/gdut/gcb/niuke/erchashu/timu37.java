@@ -7,7 +7,7 @@ import java.util.Queue;
  * @Author 古春波
  * @Description 请实现两个函数，分别用来序列化和反序列化二叉树。
  * @Date 2020/9/12 22:00
- * @Version 1.0
+ * @Version 2.0
  * url https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/
  **/
 public class timu37 {

@@ -5,9 +5,9 @@ import java.util.*;
 /**
  * @Author 古春波
  * @Description 输入一个字符串，打印出该字符串中字符的所有排列。
- *  你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
+ * 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
  * @Date 2020/10/8 11:24
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu38_a2 {
 

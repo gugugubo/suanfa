@@ -51,6 +51,7 @@ public class timu215 {
         int l = 0;
         int r = nums.length-1;
         int partition;
+        // K表示按照从小到大排序后目标元素应该所在的index
         k = nums.length - k ;
         while (true){
             partition = partition(nums, l, r);

@@ -4,7 +4,7 @@ package com.gdut.gcb.niuke.diguihehuisu;
  * @Author 古春波
  * @Description 给定一个二维网格和一个单词，找出该单词是否存在于网格中。
  * @Date 2020/9/19 21:25
- * @Version 1.0
+ * @Version 2.0
  * https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/submissions/
  **/
 public class timu12 {

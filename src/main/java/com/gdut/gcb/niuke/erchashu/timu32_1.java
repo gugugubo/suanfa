@@ -9,7 +9,7 @@ import java.util.Queue;
  * @Author 古春波
  * @Description 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
  * @Date 2020/9/12 17:09
- * @Version 1.0
+ * @Version 2.0
  * https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/
  **/
 public class timu32_1 {

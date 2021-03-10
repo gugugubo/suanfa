@@ -93,6 +93,59 @@ public  class  util {
         return "[" + output.substring(0, output.length() - 2) + "]";
     }
 
+    public static TreeNode intToTreeNode(Object[] objects) {
+        String[] parts = intToStringArray(objects);
+        String item = parts[0];
+        TreeNode root = new TreeNode(Integer.parseInt(item));
+        Queue<TreeNode> nodeQueue = new LinkedList<>();
+        nodeQueue.add(root);
+
+        int index = 1;
+        while(!nodeQueue.isEmpty()) {
+            TreeNode node = nodeQueue.remove();
+
+            if (index == parts.length) {
+                break;
+            }
+
+            item = parts[index++];
+            item = item.trim();
+            if (!item.equals("null")) {
+                int leftNumber = Integer.parseInt(item);
+                node.left = new TreeNode(leftNumber);
+                nodeQueue.add(node.left);
+            }
+
+            if (index == parts.length) {
+                break;
+            }
+
+            item = parts[index++];
+            item = item.trim();
+            if (!item.equals("null")) {
+                int rightNumber = Integer.parseInt(item);
+                node.right = new TreeNode(rightNumber);
+                nodeQueue.add(node.right);
+            }
+        }
+        return root;
+    }
+    
+    public static String[] intToStringArray(Object[] objects){
+        String[] strings3 = new String[objects.length];
+        for (int i=0 ;i<objects.length ;i++){
+            Object object = objects[i];
+            if (object==null){
+                strings3[i] = "null";
+
+            }
+            else if(object.getClass()==Integer.class){
+                strings3[i] =String.valueOf(object);;
+            }
+        }
+        return strings3;
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String line;

@@ -1,10 +1,12 @@
 package com.gdut.gcb.niuke.lianbiao;
 
+import java.util.PriorityQueue;
+
 /**
  * @Author 古春波
  * @Description 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
  * @Date 2020/9/2 15:47
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu25 {
 
@@ -46,7 +48,6 @@ public class timu25 {
         ListNode head = new ListNode(-1);
         ListNode node = head;
         
-        
         while (list1!= null && list2 != null){
             if (list1.val < list2.val){
                 node.next = list1;
@@ -67,6 +68,8 @@ public class timu25 {
             node.next = list2;
         }
         return head.next;
-        
     }
+
+   
+
 }

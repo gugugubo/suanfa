@@ -13,7 +13,7 @@ package com.gdut.gcb.likou.sousuo.erfenfa;
 public class timu744 {
 
     public char nextGreatestLetter(char[] letters, char target) {
-        int left = 0 ; int right = letters.length -1 ;
+        int left = 0 ; int right = letters.length;
         
         // 我认为下面这个while循环每次跳出的时候必定是  left == right
         // 因为 进入的时候是left < right , 那么left变大只可能 mid + 1; 除非left==right, 那么left = mid + 1 是不可能大于 right 的, 但是前提条件已经约束了 left < right 
@@ -27,14 +27,39 @@ public class timu744 {
             }
         }
         
-        char res = letters[left] > target? letters[left] :  letters[0];
+        char res =left<letters.length && letters[left] > target? letters[left] :  letters[0];
         
         return res;
     }
 
+
+    /**
+     * 使用等于号也是可以的
+     * @param letters
+     * @param target
+     * @return
+     */
+    public char nextGreatestLetter2(char[] letters, char target) {
+        int left = 0 ; int right = letters.length -1;
+        
+        while (left <= right){
+            int mid = left + (right - left) /2 ;
+            if (letters[mid] <= target){
+                left = mid + 1;
+            }else {
+                right = mid -1;
+            }
+        }
+
+        char res =left<letters.length &&  letters[left] > target? letters[left] :  letters[0];
+        return res;
+    }
+ 
     public static void main(String[] args) {
         char[] ints = new char[]{'c','f','j','k'};
+        char[] ints2 = new char[]{'f'};
         char c = new timu744().nextGreatestLetter(ints, 'f');
+        char c2 = new timu744().nextGreatestLetter(ints2, 'f');
         System.out.println(c);
     }
 }

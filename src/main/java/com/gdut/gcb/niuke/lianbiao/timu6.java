@@ -1,6 +1,7 @@
 package com.gdut.gcb.niuke.lianbiao;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Stack;
 
 /**
@@ -41,6 +42,15 @@ public class timu6 {
             objects.add(listNode.val);
         }
         return objects;
+    }
+
+    // 从尾到头打印链表
+    private void printListFromTailToHead4(ListNode listNode) {
+        if (listNode == null){
+            return;
+        }
+        printListFromTailToHead4(listNode.next);
+        System.out.println(listNode.val);
     }
 
     /**

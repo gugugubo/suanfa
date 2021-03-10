@@ -19,6 +19,8 @@ public class timu540 {
 
 
     /**
+     * 寻找左侧边界？
+     * 
      * 令 index 为 Single Element 在数组中的位置。在 index 之后，数组中原来存在的成对状态被改变。
      * 如果 m 为偶数，并且 m + 1 < index，那么 nums[m] == nums[m + 1]；m + 1 >= index，那么 nums[m] != nums[m + 1]。
      *
@@ -48,11 +50,7 @@ public class timu540 {
                 // right此时一定是偶数
                 right = mid;
             }
-
         }
-        
-       
-        
         return nums[left];
     }
 

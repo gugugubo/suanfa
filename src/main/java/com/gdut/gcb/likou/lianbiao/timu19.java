@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
  * @Author 古春波
  * @Description 19.删除链表的倒数第N个节点
  * @Date 2020/9/5 21:36
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu19 {
 
@@ -33,6 +33,9 @@ public class timu19 {
         if (n>0){
             return null;
         }
+        if (node==null){
+            return head.next;
+        }
         
         ListNode listNode = head;
         ListNode preNode = head;
@@ -48,7 +51,7 @@ public class timu19 {
     }
 
     public static void main(String[] args) {
-        int[] ints = {1, 2, 3, 4, 5};
+        int[] ints = {1, 2};
         ListNode node = stringToIntegerArray(ints);
 
         ListNode node1 = removeNthFromEnd(node, 2);

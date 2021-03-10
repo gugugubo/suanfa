@@ -41,7 +41,7 @@ public class timu17 {
         return result;
     }
     
-    
+    //  将digits[index]的数字代表的字符放到tempString中
     public void recur(int index , String tempString){
         // 这里也可以使用    if (tempString.length() == digits.length()){} 进行判断
         if (index == digits.length()){
@@ -64,5 +64,8 @@ public class timu17 {
     public static void main(String[] args) {
         List<String> list = new timu17().letterCombinations("23");
         System.out.println(list);
+        int b = (int) 0xFF;
+        byte a = (byte)0xFF;
+        System.out.println(a);
     }
 }

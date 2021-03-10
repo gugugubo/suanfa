@@ -9,7 +9,7 @@ import java.util.List;
  * @Author 古春波
  * @Description n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
  * @Date 2020/9/20 11:49
- * @Version 1.0
+ * @Version 2.0
  * url https://leetcode-cn.com/problems/n-queens/
  **/
 public class timu51 {
@@ -22,10 +22,6 @@ public class timu51 {
      * 列
      */
     boolean[] col;
-    /**
-     * 行
-     */
-    boolean[] row;
     /**
      * 储存右向左的斜对角
      */
@@ -41,12 +37,10 @@ public class timu51 {
         }
         this.n = n;
         col = new boolean[n];
-        row = new boolean[n];
         diag1 = new boolean[2*n -1];
         diag2 = new boolean[2*n -1];
         for (int i =0 ;i< n;i++){
             col[i] = false;
-            row[i] = false;
         }
         for (int j =0 ; j< 2*n -1;j++){
             diag1[j] = false;
@@ -56,14 +50,14 @@ public class timu51 {
         return result;
     }
     
-    
+    // 尝试在一个n皇后问题中，摆放第index行的皇后的位置
     private void recur(int index){
         
         if (index == n){
             result.add(generateResult(tempList));
             return;
         }
-        
+        // 在每个index行的每个列上尝试摆放
         for (int i = 0; i< n ; i++){
             if (!col[i] && !diag1[i + index] && !diag2[index - i + n -1] ){
                 tempList.addLast(i);

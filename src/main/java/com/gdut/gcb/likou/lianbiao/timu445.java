@@ -27,7 +27,6 @@ public class timu445 {
         Stack<Integer> l1Stack = new Stack<>();
         Stack<Integer> l2Stack = new Stack<>();
         Stack<Integer> result = new Stack<>();
-
         while (l1!= null){
             l1Stack.add(l1.val);
             l1 = l1.next;
@@ -49,7 +48,6 @@ public class timu445 {
             }
         }
         
-
         
         while (!l1Stack.isEmpty()){
             Integer pop1 = l1Stack.pop();
@@ -90,7 +88,7 @@ public class timu445 {
      * @param l2
      * @return
      */
-    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+    public  static ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         Stack<Integer> l1Stack = new Stack<>();
         Stack<Integer> l2Stack = new Stack<>();
 
@@ -115,9 +113,35 @@ public class timu445 {
         }
         return head;
     }
-    
 
-        public static void main(String[] args) {
+    public  static ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
+        Stack<Integer> l1Stack = new Stack<>();
+        Stack<Integer> l2Stack = new Stack<>();
+
+        while (l1!= null){
+            l1Stack.add(l1.val);
+            l1 = l1.next;
+        }
+        while (l2!= null){
+            l2Stack.add(l2.val);
+            l2 = l2.next;
+        }
+        int carry = 0;
+        ListNode head =  new ListNode(-1);
+        while (!l1Stack.isEmpty() || !l2Stack.isEmpty() || carry > 0){
+            int sum = carry;
+            sum += l1Stack.isEmpty()? 0 : l1Stack.pop();
+            sum += l2Stack.isEmpty()? 0 : l2Stack.pop();
+            ListNode node = new ListNode(sum % 10);
+            node.next = head.next;
+            head.next = node;
+            carry = sum / 10;
+        }
+        return head.next;
+    }
+    
+    
+    public static void main(String[] args) {
         int[] ints1= {9,9};
         int[] ints2= new int[]{1};
         
@@ -125,5 +149,6 @@ public class timu445 {
         ListNode l2 = stringToIntegerArray(ints2);
 
         addTwoNumbers(l1,l2);
+        addTwoNumbers2(l1,l2);
     }
 }

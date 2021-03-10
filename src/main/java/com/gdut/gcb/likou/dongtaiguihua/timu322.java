@@ -73,7 +73,7 @@ public class timu322  {
         if (amount <=0){
             return 0;
         }
-        
+        // 使用前i枚硬币凑出j钱所需的最小的硬币量
         int[][] dp = new int[coins.length+1][amount+1];
         for (int i = 0 ; i< coins.length +1 ; i++){
             for(int j = 1; j < amount+1 ; j++){

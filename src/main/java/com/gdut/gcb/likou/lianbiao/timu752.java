@@ -46,7 +46,6 @@ public class timu752 {
                 cur = cur.next;
             }
             result[i] = head.next;
-          
         }
         return result;
         

@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @Author 古春波
  * @Description 55 链表中环的入口结点
  * @Date 2020/9/6 10:58
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu55 {
     /**
@@ -44,6 +44,9 @@ public class timu55 {
         ListNode fast = pHead;
         // 注意这里不能直接使用while，不然会造成死循环
         do {
+            if (slow==null||fast==null||fast.next==null){
+                return null;
+            }
             slow = slow.next;
             fast = fast.next.next;
         } while (slow != fast);

@@ -1,5 +1,7 @@
 package com.gdut.gcb.likou.dongtaiguihua;
 
+import java.util.Arrays;
+
 /**
  * @Author 古春波
  * @Description 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
@@ -30,7 +32,59 @@ package com.gdut.gcb.likou.dongtaiguihua;
  **/
 public class timu10 {
 
-
+    /**
+     * 下面这个我没完全做出来，从后往前初始化basecase的情况太难了！还是看isMatch2 ， isMatch3
+     * @param s
+     * @param p
+     * @return
+     */
+//    public boolean isMatch(String s, String p) {
+//
+//
+//        int sLength = s.length();
+//        int pLength = p.length();
+//        if (pLength == 1) {
+//            return sLength != 1 ? false : p.charAt(0) == s.charAt(0) || p.charAt(0) == '.';
+//        }
+//        // dp数组，表示s[i...]和p[j...]之间是否完全匹配
+//        boolean[][] dp = new boolean[sLength][pLength];
+//        // 初始化base case
+//        dp[sLength-1][pLength-1] = s.charAt(sLength-1) == p.charAt(pLength-1);
+//        for (int j = pLength - 1; j >= 0; j--) {
+//            if ((pLength - j) % 2 == 1) {
+//                dp[sLength-1][j] =  false;
+//            }
+//            for (int j2= j; j2 + 1 < pLength; j2 += 2) {
+//                if (p.charAt(j2 + 1) != '*') {
+//                    dp[sLength-j2][j] = false;
+//                }
+//            }
+//            dp[sLength-1][j] = true;
+//        }
+//        for (int i = sLength - 2; i >= 0; i--) {
+//            for (int j = pLength - 2; j >= 0; j--) {
+//                // 注意处理边界问题
+//                // i和j可以匹配
+//                if (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.') {
+//                    if (j + 1 <= pLength - 1 && p.charAt(j + 1) == '*') {
+//                        dp[i][j] = dp[i][j + 2] || dp[i + 1][j];
+//                    } else {
+//                        dp[i][j] = dp[i + 1][j + 1];
+//                    }
+//                } else { // i和j不能匹配
+//                    if (j + 1 <= pLength - 1 && p.charAt(j + 1) == '*') {
+//                        dp[i][j] = dp[i + 1][j + 2];
+//                    } else {
+//                        dp[i][j] = false;
+//                    }
+//                }
+//            }
+//        }
+//        for (int i=0;i<sLength;i++){
+//            System.out.println(Arrays.toString(dp[i]));
+//        }
+//        return dp[0][0];
+//    }
 
 
     /**
@@ -124,6 +178,8 @@ public class timu10 {
     }
 
     public static void main(String[] args) {
+//        boolean match1 = new timu10().isMatch("aa", "a*");
+        //        System.out.println(match1);
         boolean match2 = new timu10().isMatch2("aa", "a*");
         boolean match3 = new timu10().isMatch3("aa", "a*");
         System.out.println(match2);

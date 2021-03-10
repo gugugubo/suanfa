@@ -8,7 +8,7 @@ import java.util.List;
  * @Author 古春波
  * @Description 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
  * @Date 2020/9/18 20:30
- * @Version 1.0
+ * @Version 2.0
  * url https://leetcode-cn.com/problems/permutations/
  **/
 public class timu47 {
@@ -48,7 +48,7 @@ public class timu47 {
         return result;
     }
 
-    // p中保存了一个有index-1个元素的排列。
+    // list中保存了一个有index-1个元素的排列。
     // 向这个排列的末尾添加第index个元素, 获得一个有index个元素的排列
     private void recu(int index){
         // 这里也可以使用    if (tempList.size() == k){} 进行判断

@@ -19,7 +19,14 @@ import java.util.Arrays;
  **/
 public class timu338 {
 
-    
+    /**
+     * 对比timu191
+     * 在二进制表示中，数字 n 中最低位的 1 总是对应 n−1 中的 0 。
+     * 因此，将 n 和 n−1 与运算总是能把 n 中最低位的 1 变成 0 ，并保持其他位不变
+     *
+     * @param num
+     * @return
+     */
     public int[] countBits(int num) {
         int[] memo = new int[num + 1 ];
         memo[0] = 0;

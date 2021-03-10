@@ -1,5 +1,7 @@
 package com.gdut.gcb.niuke.lianbiao;
 
+import com.gdut.gcb.utils.util;
+
 /**
  * @Author 古春波
  * @Description 反转链表
@@ -28,11 +30,30 @@ public class timu24 {
     }
 
     /**
-     * 递归的方法
+     * 迭代:使用头插入法但是不使用头结点
      * @param head
      * @return
      */
-    public ListNode ReverseList2(ListNode head) {
+    public ListNode ReverseList3(ListNode head) {
+
+        ListNode list = null;
+
+        while (head != null){
+            ListNode next = head.next;
+            head.next = list;
+            list = head;
+            head = next;
+        }
+
+        return list;
+    }
+    
+    /**
+     * 递归的方法，ReverseList2()返回的是head链表的反转之后的链表
+     * @param head
+     * @return
+     */
+    public static ListNode ReverseList2(ListNode head) {
         if (head == null || head.next == null){
             return head;
         }
@@ -42,5 +63,8 @@ public class timu24 {
         next.next = head;
         return node;
     }
-    
+
+
+
+  
 }

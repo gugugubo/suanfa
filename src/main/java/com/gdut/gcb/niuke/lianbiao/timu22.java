@@ -6,7 +6,7 @@ import java.util.List;
  * @Author 古春波
  * @Description 链表中倒数第k个结点
  * @Date 2020/9/2 12:33
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu22 {
 

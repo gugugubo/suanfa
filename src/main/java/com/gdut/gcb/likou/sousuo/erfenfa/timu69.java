@@ -47,9 +47,37 @@ public class timu69 {
             }else {
                 left = mid + 1;
             }
-        }       
-        
+        }
         return right;
+    }
+
+
+    /**
+     * 使用 < 号
+     * @param x
+     * @return
+     */
+    public int mySqrt2(int x) {
+        if (x <= 1){
+            return x;
+        }
+
+        int left = 0 ; int right = x;
+        while (left <right){
+            int mid = left + (right - left) / 2;
+            int sqrt = x / mid;
+            if (sqrt == mid){
+                return sqrt;
+            }else if (mid > sqrt){
+                right = mid ;
+            }else {
+                left = mid + 1;
+            }
+        }
+        if (left * left == x){
+            return left;
+        }
+        return left-1;
     }
 
     public static void main(String[] args) {

@@ -4,7 +4,7 @@ package com.gdut.gcb.niuke.lianbiao;
  * @Author 古春波
  * @Description 52. 两个链表的第一个公共节点
  * @Date 2020/9/4 9:30
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu52 {
 

@@ -1,6 +1,7 @@
 package com.gdut.gcb.likou.shujujiegou;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * @Author 古春波
@@ -57,6 +58,7 @@ class LRUCache2 {
         cache.addLast(x);
         return x.val;
     }
+    
 
     public void put(int key, int val) {
         if (map.containsKey(key)) {
@@ -131,8 +133,9 @@ class DoubleList2 {
 
     // 删除链表中第一个节点，并返回该节点，时间 O(1)
     public Node2 removeFirst() {
-        if (head.next == tail)
+        if (head.next == tail){
             return null;
+        }
         Node2 first = head.next;
         remove(first);
         return first;
@@ -148,5 +151,24 @@ class Node2 {
     public Node2 next, prev;
     public Node2(int k) {
         this.key = k;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Node2 node2 = (Node2) o;
+        return key == node2.key &&
+                Objects.equals(next, node2.next) &&
+                Objects.equals(prev, node2.prev);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(key, next, prev);
     }
 }

@@ -4,7 +4,7 @@ package com.gdut.gcb.niuke.zifuchuan;
  * @Author 古春波
  * @Description 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
  * @Date 2020/9/16 19:03
- * @Version 1.0
+ * @Version 2.0
  **/
 public class timu05 {
 

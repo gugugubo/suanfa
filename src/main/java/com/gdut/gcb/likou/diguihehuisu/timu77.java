@@ -8,7 +8,7 @@ import java.util.List;
  * @Author 古春波
  * @Description 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
  * @Date 2020/9/19 19:26
- * @Version 1.0
+ * @Version 2.0
  * 
  * https://leetcode-cn.com/problems/combinations/
  **/
@@ -28,7 +28,7 @@ public class timu77 {
         return  result;
     }
     
-    
+    // 求解C(n,k)，当前已经找到的组合储存在tempList中，需要从index开始搜索新的元素
     private void recur(int index ){
         if (tempList.size() == k){
             result.add(new ArrayList<>(tempList));
