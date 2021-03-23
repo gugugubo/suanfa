@@ -40,9 +40,28 @@ public class timu24 {
         
         return dummy.next;
     }
-    
-    
 
+
+    // 答案的递归
+    public ListNode swapPairs4(ListNode head) {
+
+        // If the list has no node or has only one node left.
+        if ((head == null) || (head.next == null)) {
+            return head;
+        }
+
+        // Nodes to be swapped
+        ListNode firstNode = head;
+        ListNode secondNode = head.next;
+
+        // Swapping
+        firstNode.next  = swapPairs4(secondNode.next);
+        secondNode.next = firstNode;
+
+        // Now the head is the second node
+        return secondNode;
+    }
+    
     /**
      * 使用迭代的方法 
      * @param head

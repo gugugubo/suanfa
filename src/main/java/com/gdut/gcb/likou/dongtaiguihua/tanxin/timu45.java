@@ -25,7 +25,7 @@ package com.gdut.gcb.likou.dongtaiguihua.tanxin;
  * @Date 2021/1/15 10:37
  * @Version 1.0
  **/
-public class timu45 {
+public class  timu45 {
 
 
     public int jump(int[] nums) {
@@ -72,7 +72,7 @@ public class timu45 {
     
     
     public static void main(String[] args) {
-        int[] jump = new int[]{4,1,1,3,1,1,1};
+        int[] jump = new int[]{1,1,2,1,2};
         int jump1 = new timu45().jump(jump);
         int jump2 = new timu45().jump2(jump);
         System.out.println(jump1);

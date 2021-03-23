@@ -1,13 +1,15 @@
 package com.gdut.gcb.likou.chazhaobiao;
 
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @Author 古春波
- * @Description 15. 三数之和
+ * @Description 15.  三数之和
  * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
  *
  * 注意：答案中不可以包含重复的三元组。
@@ -23,16 +25,6 @@ import java.util.List;
  **/
 public class timu15 {
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> totalResult = new ArrayList<>();
@@ -89,11 +81,46 @@ public class timu15 {
         }
         return totalResult;
     }
-
+    
+    public boolean repeatedSubstringPattern(String s) {
+        ArrayList<Character> list = new ArrayList();
+        int k = 0;
+        for(int i=0 ; i< s.length(); i++){
+            if(!list.contains(s.charAt(i))){
+                list.add(s.charAt(i));
+                k = i;
+            }else{
+                k = i;
+                break;
+            }
+        }
+        if(s.length() % k != 0){
+            return false;
+        }
+        for(int i=k ; i<s.length(); i++){
+            if(s.charAt(i) == list.get(i%k)){
+                continue;
+            }else{
+                return false;
+            }
+        }
+        return true;
+    }
+    
     public static void main(String[] args) {
-        timu15 timu15 = new timu15();
-        int[] ints = new int[]{1,2,-2,-1};
-        List<List<Integer>> lists = timu15.threeSum(ints);
-        
+
+//        timu15 timu15 = new timu15();
+//        timu15.repeatedSubstringPattern("abab");
+//        int[] ints = new int[]{1,2,-2,-1};
+//        List<List<Integer>> lists = timu15.threeSum(ints);
+        String s1 = new String("hello");
+        String intern1 = s1.intern();
+        String s2 = "hello";
+        System.out.println(s1 == s2);
+        String s3 = new String("hello") + new String("hello");
+        String intern3 = s3.intern();
+        System.out.println(s3 == intern3);
+        String s4 = "hellohello";
+        System.out.println(s3 == s4);
     }
 }

@@ -24,7 +24,7 @@ import java.util.Comparator;
  * @Date 2021/2/5 18:07
  * @Version 1.0
  **/
-public class timu1288 {
+public class  timu1288 {
 
 
     /**

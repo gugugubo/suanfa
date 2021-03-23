@@ -39,7 +39,6 @@ public class timu560 {
             res += prefixMap.getOrDefault(totalSum-k,0);
             prefixMap.put(totalSum, prefixMap.getOrDefault(totalSum,0) + 1);
         }
-        res += prefixMap.getOrDefault(totalSum-k,0);
         return res;
     }
 

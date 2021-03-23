@@ -3,8 +3,9 @@ package com.gdut.gcb.likou.dongtaiguihua;
 import java.util.HashMap;
 
 /**
- * @Author 古春波
- * @Description 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+ * @Author  古春波
+ * @Description 最大子序和
+ * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
  *
  * 示例:
  *
@@ -25,7 +26,7 @@ import java.util.HashMap;
 public class timu53 {
 
     public int maxSubArray(int[] nums) {
-        
+        // 以nums[i] 结尾的最大子数组和
         int[] dp = new int[nums.length];
         
         dp[0] = nums[0];

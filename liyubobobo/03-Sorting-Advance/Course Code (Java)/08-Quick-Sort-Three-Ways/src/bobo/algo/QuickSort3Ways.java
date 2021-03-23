@@ -49,7 +49,7 @@ public class QuickSort3Ways {
     }
 
     public static void sort(Comparable[] arr){
-
+ 
         int n = arr.length;
         sort(arr, 0, n-1);
     }

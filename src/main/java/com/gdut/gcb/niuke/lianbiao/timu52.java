@@ -11,6 +11,7 @@ public class timu52 {
 
     /**
      * 迭代解决问题
+     * 不会无限循环，没有交点的情况可以约化为 交点为 null 的情况
      * @param headA
      * @param headB
      * @return
@@ -26,5 +27,10 @@ public class timu52 {
             node2 = node2 == null? headA : node2.next;
         }
         return node1;
+    }
+
+    // 可以使用set做
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+        return null;
     }
 }

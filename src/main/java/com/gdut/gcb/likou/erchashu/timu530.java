@@ -3,8 +3,8 @@ package com.gdut.gcb.likou.erchashu;
 import com.gdut.gcb.niuke.erchashu.TreeNode;
 
 /**
- * @Author 古春波
- * @Description 530. 二叉搜索树的最小绝对差给你一棵所有节点为非负值的二叉搜索树，请你计算树中任意两节点的差的绝对值的最小值。
+ * @Author  古春波
+ * @Description 530. 二叉搜索树的最小绝对差 给你一棵所有节点为非负值的二叉搜索树，请你计算树中任意两节点的差的绝对值的最小值。
  *
  *
  *

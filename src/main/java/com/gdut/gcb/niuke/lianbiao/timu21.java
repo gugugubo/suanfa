@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  * @Date 2020/9/2 15:47
  * @Version 2.0
  **/
-public class timu25 {
+public class timu21 {
 
     /**
      * 递归的方式

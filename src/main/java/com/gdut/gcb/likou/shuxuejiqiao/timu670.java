@@ -20,7 +20,8 @@ package com.gdut.gcb.likou.shuxuejiqiao;
 public class timu670 {
 
 
-    /**    链接：https://leetcode-cn.com/problems/maximum-swap/solution/zui-da-jiao-huan-by-leetcode/
+    /** 最左边最小的数和最右边最大的数进行交换就行了
+     * 链接：https://leetcode-cn.com/problems/maximum-swap/solution/zui-da-jiao-huan-by-leetcode/
      * 对比timu31,timu402
      * @param num
      * @return
@@ -30,7 +31,7 @@ public class timu670 {
         int len = s.length();
         char[] charArray = s.toCharArray();
 
-        // 记录每个数字出现的最后一次出现的下标
+        // 优化：使用一个数组，空间换时间，记录每个数字出现的最后一次出现的下标     
         int[] last = new int[10];
         for (int i = 0; i < len; i++) {
             last[charArray[i] - '0'] = i;

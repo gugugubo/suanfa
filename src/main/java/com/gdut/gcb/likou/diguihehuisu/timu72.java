@@ -23,7 +23,7 @@ import java.util.List;
  * @Date 2021/1/31 20:01
  * @Version 1.0
  **/
-public class timu78 {
+public class timu72 {
 
     int[] nums;
 
@@ -54,7 +54,7 @@ public class timu78 {
 
     public static void main(String[] args) {
         int[] ints = new int[]{1, 2, 3};
-        List<List<Integer>> subsets = new timu78().subsets(ints);
+        List<List<Integer>> subsets = new timu72().subsets(ints);
         for (List<Integer> subset : subsets) {
             System.out.println(subset);
         }

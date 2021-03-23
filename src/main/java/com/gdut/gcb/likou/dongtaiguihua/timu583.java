@@ -18,7 +18,7 @@ package com.gdut.gcb.likou.dongtaiguihua;
  * @Date 2021/1/10 11:46
  * @Version 1.0
  **/
-public class timu583 {
+public class  timu583 {
 
 
     public int minDistance(String word1, String word2) {

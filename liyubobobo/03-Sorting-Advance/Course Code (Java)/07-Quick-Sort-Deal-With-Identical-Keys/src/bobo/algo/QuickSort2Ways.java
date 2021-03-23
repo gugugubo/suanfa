@@ -23,7 +23,8 @@ public class QuickSort2Ways {
 
         // arr[l+1...i) <= v; arr(j...r] >= v
         int i = l+1, j = r;
-        while( true ){
+//        while( true ){  // 和下面的效果一样
+        while(  i < j ){
             // 注意这里的边界, arr[i].compareTo(v) < 0, 不能是arr[i].compareTo(v) <= 0
             // 思考一下为什么?
             while( i <= r && arr[i].compareTo(v) < 0 )

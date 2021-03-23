@@ -48,12 +48,9 @@ public class QuickSort2Ways {
     // 递归使用快速排序,对arr[l...r]的范围进行排序
     private static void sort(Comparable[] arr, int l, int r){
 
-        // 对于小规模数组, 使用插入排序
-        if( r - l <= 15 ){
-            InsertionSort.sort(arr, l, r);
+        if (r <= l){
             return;
         }
-
         int p = partition(arr, l, r);
         sort(arr, l, p-1 );
         sort(arr, p+1, r);

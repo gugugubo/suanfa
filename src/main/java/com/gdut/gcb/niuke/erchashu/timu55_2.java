@@ -27,6 +27,7 @@ public class timu55_2 {
 
     public int recur(TreeNode root){
         if (root == null){return 0;}
+        // 下面这个if可以去掉
         if (result != true){
             return -1;
         }

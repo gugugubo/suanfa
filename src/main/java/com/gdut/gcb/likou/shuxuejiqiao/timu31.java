@@ -13,7 +13,7 @@ import java.util.Arrays;
  *
  * 必须 原地 修改，只允许使用额外常数空间。
  *
- * 来源：力扣（LeetCode）
+ * 来源： 力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/next-permutation
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @Date 2021/2/27 15:51

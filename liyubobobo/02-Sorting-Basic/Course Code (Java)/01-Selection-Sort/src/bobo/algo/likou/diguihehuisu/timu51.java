@@ -60,7 +60,7 @@ public class timu51 {
     private void recur(int index){
         
         if (index == n){
-            result.add(generateResult(tempList));
+            result.add( generateResult(tempList));
             return;
         }
         

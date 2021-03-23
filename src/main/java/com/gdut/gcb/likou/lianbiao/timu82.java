@@ -26,6 +26,10 @@ import com.gdut.gcb.utils.util;
  **/
 public class timu82 {
 
+
+    /**
+     * 自己做的
+     */
     public ListNode deleteDuplicates(ListNode head) {
         if (head ==null){
             return head;
@@ -50,6 +54,36 @@ public class timu82 {
         return root.next;
     }
 
+    /**对比timu83
+     * 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/solution/javadi-gui-0ms-by-maplestore/
+     * deleteDuplicates3返回的链表中没有重复的节点
+     * @param head
+     * @return
+     */
+    public ListNode deleteDuplicates3(ListNode head) {
+        // 1.特殊情况，头节点为null或头节点下一节点为null，直接返回头节点，这时不存在重复节点
+        if (head == null || head.next == null) {
+            return head;
+        }
+        //2.如果头节点与，头节点的下一节点值相等，跳过所有相等节点。递归调用函数判断最后一个跳过节点的后一节点。
+        if (head.val == head.next.val) {
+            while (head != null && head.next != null && head.val == head.next.val) {
+                head = head.next;
+            }
+            return deleteDuplicates3(head.next);
+        } else {  //3.如果头节点与，头节点的下一节点值不等，递归调用函数判断头节点的后一节点。
+            head.next = deleteDuplicates3(head.next);
+            return head;
+        }
+    }
+
+
+    
+    
+    
+    /**
+     * 自己做的，已经自己都看不懂了
+     */
     ListNode pre ;
     public  ListNode deleteDuplicates2(ListNode head) {
         ListNode root= new ListNode(-1);

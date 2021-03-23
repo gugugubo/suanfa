@@ -8,7 +8,7 @@ import java.util.Queue;
 
 /**
  * @Author 古春波
- * @Description 给定一个二叉树，检查它是否是镜像对称的。
+ * @Description  给定一个二叉树，检查它是否是镜像对称的。
  *
  *
  *

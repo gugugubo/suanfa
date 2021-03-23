@@ -34,7 +34,7 @@ import java.util.List;
 public class timu958 {
 
 
-    /**
+    /**对比timu662
      * 参考题解：https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree/solution/er-cha-shu-de-wan-quan-xing-jian-yan-by-leetcode/
      * @param root
      * @return
@@ -59,7 +59,7 @@ public class timu958 {
         return nodes.get(i-1).code == nodes.size();
     }
 
-    /**
+    /**对比timu662
      * 参考上面的代码自己写的
      * @param root
      * @return

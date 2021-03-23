@@ -3,7 +3,7 @@ package com.gdut.gcb.niuke.zhanheduilie.zhan_duilie_huhuan;
 import java.util.Stack;
 
 /**
- * @Author 古春波
+ * @Author  古春波
  * @Description 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
  *
  * 来源：力扣（LeetCode）
@@ -32,9 +32,11 @@ public class timu09 {
     }
 
     public int deleteHead() {
+        // 如果stack2不为空，直接取
         if (!stack2.isEmpty()){
             return stack2.pop();
         }else {
+            // 把stack1都放进stack2
             while (!stack1.isEmpty()){
                 Integer pop = stack1.pop();
                 stack2.add(pop);
@@ -42,6 +44,7 @@ public class timu09 {
             if (stack2.isEmpty()){
                 return -1;
             }else {
+                // 取stack2
                 return stack2.pop();
             }
         }

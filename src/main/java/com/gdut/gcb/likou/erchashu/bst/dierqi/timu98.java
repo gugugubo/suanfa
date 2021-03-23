@@ -25,6 +25,9 @@ package com.gdut.gcb.likou.erchashu.bst.dierqi;
 import com.gdut.gcb.niuke.erchashu.TreeNode;
 import com.gdut.gcb.utils.util;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * 最后总结
  *
@@ -58,11 +61,39 @@ public class timu98 {
         return leftResult && rightResult;
     }
 
+
+    /**
+     *     链接：https://leetcode-cn.com/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/
+     * @param root
+     * @return
+     */
+    public boolean isValidBST2(TreeNode root) {
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        double inorder = -Double.MAX_VALUE;
+
+        while (!stack.isEmpty() || root != null) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            // 如果中序遍历得到的节点的值小于等于前一个 inorder，说明不是二叉搜索树
+            if (root.val <= inorder) {
+                return false;
+            }
+            inorder = root.val;
+            root = root.right;
+        }
+        return true;
+    }
+
+    
     public static void main(String[] args) {
         String[] strings = new String[]{"10","5","15","null","null","6","20"};
         TreeNode treeNode = util.stringToTreeNode(strings);
         timu98 timu98 = new timu98();
         boolean validBST = timu98.isValidBST(treeNode);
+        boolean validBST2 = timu98.isValidBST2(treeNode);
         System.out.println(validBST);
     }
 }

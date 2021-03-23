@@ -7,7 +7,10 @@ import java.util.Stack;
 
 /**
  * @Author 古春波
- * @Description TODO
+ * @Description 二叉搜索树迭代器
+ * 实现一个二叉搜索树迭代器。你将使用二叉搜索树的根节点初始化迭代器。
+ *
+ * 调用 next() 将返回二叉搜索树中的下一个最小的数。
  * @Date 2021/3/6 11:15
  * @Version 1.0
  **/

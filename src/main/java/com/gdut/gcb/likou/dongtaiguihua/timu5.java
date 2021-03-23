@@ -1,7 +1,7 @@
 package com.gdut.gcb.likou.dongtaiguihua;
 
 /**
- * @Author 古春波
+ * @Author  古春波
  * @Description 5. 最长回文子串
  * 
  * 给你一个字符串 s，找到 s 中最长的回文子串。
@@ -126,6 +126,76 @@ public class timu5 {
     public static void main(String[] args) {
         String test = "abcdef";
         // substring() 函数是左闭右开
-        System.out.println(test.substring(0, 3));
+        System.out.println(test.substring(0, 0+3));
+        longestPalindrome4("aacabdkac");
+        longestPalindrome5("cbbd");
+    }
+
+
+    // 自己做的动态规划
+    public static String longestPalindrome5(String s) {
+        int length = s.length();
+        // 特判
+        if (length < 2){
+            return s;
+        }
+        int maxLength=1;
+        int startIndex=0;
+        boolean[][] dp = new boolean[length][length];
+        for(int i=0; i<length; i++){
+            dp[i][i] = true;
+        }
+        for(int i=length-2; i>=0; i--){
+            for (int j=i+1; j<=length-1; j++){
+                if (s.charAt(i) != s.charAt(j)){
+                    dp[i][j] = false;
+                }else {
+                    if (j-i<3){
+                        dp[i][j] = true;
+                    }else {
+                        dp[i][j] = dp[i+1][j-1];
+                    }
+                }
+                if (dp[i][j] && j-i +1>=maxLength){
+                    maxLength = j-i +1;
+                    startIndex = i;
+                }
+            }
+        }
+        return s.substring(startIndex ,startIndex+maxLength);
+    }
+    
+
+    // 下面是自己做的，想法错了，做成子序列问题了
+    public static String longestPalindrome4(String s) {
+        int length = s.length();
+        // dp[i][j] 表示 字符串i到j位置的最长回文子串
+        int[][] dp = new int[length][length];
+
+        for(int i=length-1; i>=0; i-- ){
+            dp[i][i] = 1;
+        }
+        int maxLength = 1;
+        int startIndex = 0;
+        for(int i=length-1; i>=0; i-- ){
+            for(int j=i+1; j<=length-1; j++ ){
+                char chari = s.charAt(i);
+                char charj = s.charAt(j);
+                if(chari == charj){
+                    dp[i][j] = dp[i+1][j-1] + 2;
+                    if(j-i+1>=maxLength){
+                        startIndex = i;
+                    }
+                }else{
+                    int tempi = dp[i+1][j];
+                    int tempj = dp[i][j-1];
+                    dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1]);
+                }
+            }
+        }
+        int resLength = dp[0][length-1];
+        String  substring= s.substring(startIndex, startIndex+resLength);
+        
+        return substring;
     }
 }

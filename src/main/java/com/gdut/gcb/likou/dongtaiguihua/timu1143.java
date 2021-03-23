@@ -23,7 +23,7 @@ package com.gdut.gcb.likou.dongtaiguihua;
  * @Date 2021/1/12 9:32
  * @Version 1.0
  **/
-public class timu1143 {
+public class  timu1143 {
 
     public int longestCommonSubsequence(String text1, String text2) {
         int text1Length = text1.length();

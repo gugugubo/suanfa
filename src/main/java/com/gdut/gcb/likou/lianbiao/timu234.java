@@ -28,19 +28,17 @@ public class timu234 {
     
     
     
-/*
-    方法二：递归
-    我们知道，如果对链表逆序打印可以这样写
-    private void printListNode(ListNode head) {
-        if (head == null)
-            return;
-        printListNode(head.next);
-        System.out.println(head.val);
-    }
-
-    也就是说最先打印的是链表的尾结点，他是从后往前打印的，如果以后谁再给你说单向链表不能从后往前遍历，
-    你就拿这段代码怼他，哈哈。看到这里是不是有灵感了，我们来对上面的对面进行改造一下
-*/
+//    方法二：递归
+//    我们知道，如果对链表逆序打印可以这样写
+//    private void printListNode(ListNode head) {
+//        if (head == null)
+//            return;
+//        printListNode(head.next);
+//        System.out.println(head.val);
+//    }
+//
+//    也就是说最先打印的是链表的尾结点，他是从后往前打印的，如果以后谁再给你说单向链表不能从后往前遍历，
+//    你就拿这段代码怼他，哈哈。看到这里是不是有灵感了，我们来对上面的对面进行改造一下
 
     ListNode left;
     public boolean isPalindrome(ListNode head) {
@@ -60,6 +58,8 @@ public class timu234 {
         return false;
     }
 
+    
+    // 方法三：我们可以将链表的后半部分反转（修改链表结构），然后将前半部分和后半部分进行比较
     
     
 }

@@ -5,7 +5,7 @@ import com.gdut.gcb.utils.util;
 
 /**
  * @Author 古春波
- * @Description 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
+ * @Description  反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
  *
  * 说明:
  * 1 ≤ m ≤ n ≤ 链表长度。

@@ -23,7 +23,7 @@ import java.util.List;
  *  \     \
  *   5     4       <---
  *
- * 来源：力扣（LeetCode）
+ * 来源： 力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/binary-tree-right-side-view
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @Date 2021/2/16 16:15

@@ -1,13 +1,15 @@
 package bobo.algo.niuke.zhanheduilie;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
  * @Author 古春波
  * @Description 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
  * @Date 2020/9/15 21:51
- * @Version 1.0
+ * @Version 2.0
  * url https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/
  **/
 public class timu59_1 {
@@ -62,6 +64,9 @@ public class timu59_1 {
         }
         return res;
     }
+    
+    
+    
 
     public static void main(String[] args) {
 //        int[] nums = new int[]{1,3,-1,-3,5,3,6,7};[1,3,1,2,0,5]

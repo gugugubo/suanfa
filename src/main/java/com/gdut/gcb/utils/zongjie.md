@@ -4,10 +4,12 @@
 
 ## 链表
 
-1. **如果需要对链表进行翻转，可以考虑迭代中使用栈和头插法(头插法一般会使用一个头结点)或者使用递归**  从尾到头打印链表timu6  链表相加likou.timu445  反转链表timu24   反转链表指定范围likou.timu92   K个一组翻转链表likou.timu25  
-2. **考虑链表元素多次迭代分析出数学等式的情况**  链表中倒数第k个结点timu22 删除链表的倒数第N个节点likou.timu19  两个链表的第一个公共节点timu52    链表中环的入口结点timu55  
-3. **考虑多个指针的使用**    链表分隔成k部分likou.timu752  链表的中间结点timu876 奇偶链表likou.timu328   复杂链表的复制timu35  
-4.  **递归+多指针** 合并递增链表timu25  去除重复节点likou.timu56  两两交换链表节点likou.timu24  链表是否为回文链表timu234 
+关键字：迭代(多指针)/递归    栈/头插法     数学等式
+
+1. **如果需要对链表进行翻转，可以考虑迭代中使用栈和头插法(头插法一般会使用一个头结点)或者使用递归**  从尾到头打印链表timu6     链表相加likou.timu445     反转链表timu24      反转链表指定范围likou.timu92     K个一组翻转链表likou.timu25  
+2. **考虑链表元素多次迭代分析出数学等式的情况**  链表中倒数第k个结点timu22    删除链表的倒数第N个节点likou.timu19  两个链表的第一个公共节点timu52    环形链表timu141     环形链表ii timu142
+3. **考虑多个指针的使用**    链表分隔成k部分likou.timu752  链表的中间结点timu876 奇偶链表likou.timu328   复杂链表的复制timu35  环形链表timu141
+4.  **递归+多指针**   合并递增链表timu21   合并K个升序链表timu23     排序链表148     删除排序链表中的重复元素timu83   删除排序链表中的重复元素ii-timu82     两两交换链表节点likou.timu24     链表是否为回文链表timu234    回文链表timu234
 
 ## 双指针
 
@@ -15,11 +17,13 @@
 
 2. 有序数组合并timu88  平方数之和timu633 有序数组找目标和timu167  反转字符串timu344 反转字符串中的元音字母timu345  验证回文字符串Ⅱtimu680  匹配到字典里最长单词timu524
 2. 原地修改数组likou.timu26  删除排序链表中的重复元素likou.timu83  移除元素likou.timu27    移动零likou283
-2. 调整数组顺序使奇数位于偶数前面niuke.timu21
+2. 调整数组顺序使奇数位于偶数前面niuke.timu21  接雨水timu42
 
 
 
 ## 滑动窗口
+
+三个变量 need，valid，windows
 
 ```cpp
 int left = 0, right = 0;
@@ -48,7 +52,7 @@ void slidingWindow(string s, string t) {
     while (right < s.size()) {
         // c 是将移入窗口的字符
         char c = s[right];
-        // 右移窗口
+        // 1.右移窗口
         right++;
         // 进行窗口内数据的一系列更新
         ...
@@ -57,15 +61,16 @@ void slidingWindow(string s, string t) {
         printf("window: [%d, %d)\n", left, right);
         /********************/
  
-        // 判断左侧窗口是否要收缩
+        // 2.判断左侧窗口是否要收缩
         while (window needs shrink) {
             // d 是将移出窗口的字符
             char d = s[left];
-            // 左移窗口
+            // 3.左移窗口
             left++;
             // 进行窗口内数据的一系列更新
             ...
         }
+        // 4.明确更新数据的地方，不一定是此处
     }
 }
 ```
@@ -139,7 +144,8 @@ for (int i = 0; i < nums.length; i++) {
 
 2. 二分法所有题目分类：[地址](https://www.liwei.party/2019/06/17/leetcode-solution-new/search-insert-position/#toc-heading-2)   这个总结中与labuladong的区别就是：在计算左侧边界或者右侧边界的时候没有舍弃符合条件的那个边界值，从而形成闭区间！   因此特别需要注意的地方是：**只要看到 `left = mid` ，它对应的取中位数的取法一定是 `int mid = left + (right - left + 1) / 2;`。**
 
-   
+
+奇怪的判断边界：搜索旋转排序数组timu33    旋转数组最小值niuke.timu11    山脉数组中查找目标值timu1095   
 
 
 
@@ -170,14 +176,20 @@ void traverse(TreeNode root) {
 }
 ```
 
-2. 递归+迭代：二叉树的最小深度likou.timu111
-2. 第一期：二叉树展开为链表likou.timu114  填充节点右侧节点指针likou.timu116（注意上面红色字）  翻转二叉树likou.timu226
-3. 第二期：从前序与中序遍历序列构造二叉树likou.timu105  从中序与后序遍历序列构造二叉树likou.timu106  最大二叉树likou.timu654
-4. 第三期：寻找重复的子树likou.timu652
-5. bst第一期：把二叉搜索树转换为累加树likou.timu538（类变量的使用）  二叉搜索树中第K小的元素likou.timu230 （类变量的使用）    请判断一个链表是否为回文链表likou.timu234（类变量的使用）  二叉搜索树与双向链表niuke.timu93（类变量的使用，这个是offer的题）
-6. bst第二期：验证二叉搜索树likou.timu98（如果当前节点会对下面的子节点有整体影响，可以通过辅助函数增长参数列表，借助参数传递信息）  删除二叉搜索树中的节点likou.timu450  二叉搜索树中的搜索likou.timu700    二叉搜索树中的插入操作likou.timu701  
-8. 完全二叉树相关：二叉树最大宽度likou.timu662   判断完全二叉树likou.timu958
-9. 其它题目 对称二叉树likou.timu101（注意上面红色字）
+2. 递归+迭代：二叉树的最小深度likou.timu111（**注意上面红色字**）
+3. 第一期：二叉树展开为链表likou.timu114  填充节点右侧节点指针likou.timu116（**注意上面红色字**）  翻转二叉树likou.timu226
+4. 第二期：从前序与中序遍历序列构造二叉树likou.timu105  从中序与后序遍历序列构造二叉树likou.timu106  最大二叉树likou.timu654
+5. 第三期：寻找重复的子树likou.timu652
+6. bst第一期：把二叉搜索树转换为累加树likou.timu538（类变量的使用）  二叉搜索树中第K小的元素likou.timu230 （类变量的使用）    请判断一个链表是否为回文链表likou.timu234（类变量的使用）  二叉搜索树与双向链表niuke.timu36（类变量的使用，这个是offer的题）  判断一个链表是否为回文链表timu234（类变量的使用） 
+7. bst第二期：验证二叉搜索树likou.timu98（**注意上面红色字**）（如果当前节点会对下面的子节点有整体影响，可以通过辅助函数增长参数列表，借助参数传递信息）  删除二叉搜索树中的节点likou.timu450  二叉搜索树中的搜索likou.timu700    二叉搜索树中的插入操作likou.timu701    二叉搜索树的最小绝对差timu530（类变量的使用）  将有序数组转换为二叉搜索树timu108
+8. 序列化专题：二叉树的序列化与反序列化timu297
+9. 完全二叉树相关：二叉树最大宽度likou.timu662   判断完全二叉树likou.timu958
+10. 其它题目 二叉树的右视图timu199  二叉树的直径timu543    二叉树中的最大路径和timu124  二叉树的最近公共祖先timu236    验证平衡二叉树timu110    对称二叉树likou.timu101（**注意上面红色字**）  
+11. 其它地方的类变量的使用：判断一个链表是否为回文链表timu234    反转链表指定范围likou.timu92
+
+
+
+
 
 
 
@@ -188,7 +200,7 @@ void traverse(TreeNode root) {
 ```java
 // 计算从起点 start 到终点 target 的最近距离
 int BFS(Node start, Node target) {
-    Queue<Node> q; // 核心数据结构
+    Queue<Node> q; // 1.核心数据结构
     Set<Node> visited; // 避免走回头路
 
     q.offer(start); // 将起点加入队列
@@ -200,10 +212,10 @@ int BFS(Node start, Node target) {
         /* 将当前队列中的所有节点向四周扩散 */
         for (int i = 0; i < sz; i++) {
             Node cur = q.poll();
-            /* 划重点：这里判断是否到达终点 */
+            /* 2.划重点：这里判断是否到达终点 */
             if (cur is target)
                 return step;
-            /* 将 cur 的相邻节点加入队列 */
+            /* 3.将 cur 的相邻节点加入队列 */
             for (Node x : cur.adj())
                 if (x not in visited) {
                     q.offer(x);
@@ -217,6 +229,25 @@ int BFS(Node start, Node target) {
 ```
 
 1. 二叉树的最小深度likou.timu111   打开转盘锁likou.timu752
+
+> 与层序遍历的一点不同：
+>
+> ```java
+> while (!q.isEmpty()) {  // 可以改为 for (int i = 1; i < q.length; ) {
+>     TreeNode cur = q.poll();
+> 
+>     if (cur.left != null) {
+>         q.offer(cur.left);
+>     }
+> 
+>     if (cur.right != null) {
+>         q.offer(cur.right);
+>     }
+> }
+> ```
+
+
+
 
 
 ## 回溯
@@ -235,6 +266,11 @@ int BFS(Node start, Node target) {
  * 讲义： https://leetcode-cn.com/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/
  */
 ```
+
+1. 螺旋矩阵timu54   
+2. 全排列timu46/niuke.timu47  全排列ii-timu47
+
+
 
 
 
@@ -264,13 +300,30 @@ for 状态1 in 状态1的所有取值：
 >
 > dp 数组的遍历方向：1、遍历的过程中，所需的状态必须是已经计算出来的。2、遍历的终点必须是存储结果的那个位置。
 
+1. 子序列问题：
+   1. 最长回文子序列timu516   
+   2. 最长公共子序列问题：最长公共子序列timu1134  两个字符串的删除操作timu583   最小 ASCII 删除和timu712    
+   3. 编辑距离timu72     
+   4. 最大子序和timu53
+2. 背包问题（一般多设一个状态）
+   1. 0-1背包问题（零钱数量有限）：[0-1背包问题](https://labuladong.gitee.io/algo/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98.html)  分割等和子集timu416
+   2. 完全背包问题（零钱数量无限）：零钱兑换timu518-ii        
+3. 坐标对：俄罗斯套娃信封问题timu354（按照左区间升序排序+右边区间降序排序）   + 贪心问题
 
 
 
 
 ### 贪心
 
-1. **一般都是需要先进行排序**：删除被覆盖区间timu1288   无重叠区间timu435   用最少的箭头射爆气球timu452   区间合并问题timiu56  区间交集问题timu986
+1. 区间问题：一般都是需要先进行排序  
+   1. 无重叠区间timu435（按照右边区间升序排序）   用最少的箭头射爆气球timu452（按照右边区间升序排序）  
+   2. 删除被覆盖区间timu1288（按照左区间升序排序+右边区间降序排序）    区间合并问题timiu56（按照左区间升序排序+右边区间降序排序）    区间交集问题timu986
+2. 跳跃问题timu55  跳跃问题timu54    分发饼干timu455
+3. 
+
+## 位运算
+
+1. 比特位计数timu338
 
 
 
@@ -282,37 +335,148 @@ for 状态1 in 状态1的所有取值：
 
 ### 单调栈
 
-1. 下一个更大元素I timu496    每日问题timu739   下一个更大元素ii timu503 
+1. 下一个更大元素I timu496    每日问题timu739   下一个更大元素ii-timu503 
 
 
 
 ## 算法技巧
 
-1. 前缀和：  和为K的子数组likou.timu560   likou.timu437路径总和 III
+1. 前缀和（**注意base case**）：  和为K的子数组likou.timu560   路径总和iii-likou.timu437   实现Trie-timu208
 
 
 
 
 
-
-
-1. 双路快排的parition：最后需要   swap(arr,l,j);      return j;
-2. 
-
-
-
-
-
-栈的使用
+## 栈的使用
 
 1. 进行翻转的时候：查看链表专题
-2. 进行匹配的时候：波兰表达式求值timu150  字符串解码timu394   删除字符串中的所有相邻重复项1047
-3. 
+2. 进行匹配的时候（存起来等会还要用）：波兰表达式求值timu150    字符串解码timu394   删除字符串中的所有相邻重复项1047  有效的括号timu20
+3. 栈的一些变化：包含min函数的栈niuke.timu30    栈实现队列niuke.timu09   队列实现栈timu225
 
 
+
+数学加减计算
+
+1. 字符串相加timu415    链表相加timu445		
+2. 
+
+数学字符转换
+
+1. 字符串转换整数niuke.timu67/timu8    整数反转timu7    最大交换timu670    下一个排列timu31   移掉K位数字timu402（前导零）   最大数timu179（前导零）
+
+
+
+遍历矩阵
+
+1. 螺旋矩阵timu54    
 
 
 
 删除相邻元素
 
-1. 删除字符串中的所有相邻重复项timu1047 
+1. 删除字符串中的所有相邻重复项timu1047     删除排序链表中的重复元素timu83   删除排序链表中的重复元素ii-timu82 
+
+
+
+
+
+二叉树的序列化相关
+
+1. 二叉树的序列化与反序列化timu297(不能使用中序遍历)     从前序与中序遍历序列构造二叉树likou.timu105     从中序与后序遍历序列构造二叉树likou.timu106  
+
+一些验证操作
+
+1. 验证平衡二叉树timu110/niuke.timu55_2     验证二叉搜索树likou.timu98      验证完全二叉树timu958
+
+选择性递归：
+
+1.  删除排序链表中的重复元素ii-timu82     删除二叉搜索树中的节点likou.timu450
+
+路径和：
+
+1. 二叉树中的最大路径和timu124     路径总和timu112     路径总和ii-timu113   路径总和iii-timu437   二叉搜索树的最小绝对差timu530    最大子序和timu53    和为K的子数组timu560
+
+二叉树的节点的连线
+
+1.  二叉树的直径timu543    二叉树最大宽度timu662
+
+
+
+回文相关
+
+1. 回文链表timu234   
+2. 子串：最长回文子串timu5
+3. 子序列：最长回文子序列timu516
+
+
+
+括号
+
+1. 最长有效括号timu32
+
+
+
+数组
+
+1. 最大子序和/最大连续子数组timu53
+
+
+
+## 背代码
+
+1. 双路快排的
+
+   ```java
+   private static int partition(Comparable[] arr, int l, int r){
+   
+       // 随机在arr[l...r]的范围中, 选择一个数值作为标定点pivot
+       swap( arr, l , (int)(Math.random()*(r-l+1))+l );
+       Comparable v = arr[l];
+       // arr[l+1...i) <= v; arr(j...r] >= v
+       int i = l+1, j = r;
+       while( true ){
+           // 1.
+           while( i <= r && arr[i].compareTo(v) < 0 )
+               i ++;
+           while( j >= l+1 && arr[j].compareTo(v) > 0 )
+               j --;
+           if( i >= j )
+               break;
+           swap( arr, i, j );
+           //2.
+           i ++;
+           j --;
+       }
+       // 3.
+       swap(arr, l, j);
+       return j;
+   }
+   ```
+
+2. 二叉树的最近公共祖先timu236   
+
+   ```java
+   public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+       // base case
+       if(root==null){
+           return null;
+       }
+       // 1.
+       if (root==p||root==q){
+           return root;
+       }
+       // 2.递归
+       TreeNode left = lowestCommonAncestor(root.left, p, q);
+       TreeNode right = lowestCommonAncestor(root.right, p, q);
+       // 3.拼接递归结果
+       if (left!=null&&right!=null){
+           return root;
+       }else if (left==null&&right==null){
+           return null;
+       }else {
+           return left==null?right:left;
+       }
+   }
+   ```
+
+3. 

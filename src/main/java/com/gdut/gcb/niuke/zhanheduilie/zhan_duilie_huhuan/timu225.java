@@ -39,6 +39,7 @@ public class timu225 {
 
     Queue<Integer> queue ;
     
+    // https://leetcode-cn.com/problems/implement-stack-using-queues/solution/yong-dui-lie-shi-xian-zhan-by-leetcode-solution/
     public timu225() {
         queue = new LinkedList<>();
     }

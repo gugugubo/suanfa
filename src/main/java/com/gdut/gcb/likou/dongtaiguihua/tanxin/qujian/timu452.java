@@ -24,7 +24,7 @@ import java.util.Comparator;
  * @Date 2021/1/15 1:25
  * @Version 2.0
  **/
-public class timu452 {
+public class  timu452 {
     public int findMinArrowShots(int[][] points) {
         
         Arrays.sort(points, new Comparator<int[]>() {
