@@ -1,6 +1,5 @@
-package com.gdut.gcb.likou.dongtaiguihua;
+package com.gdut.gcb.likou.diguihehuisu.kuohao;
 
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -25,7 +24,10 @@ import java.util.Stack;
  **/
 public class timu32 {
 
-
+    public static void main(String[] args) {
+        timu32 timu32 = new timu32();
+        timu32.longestValidParentheses2(")()())");
+    }
 
     /**
      *  链接：https://leetcode-cn.com/problems/longest-valid-parentheses/solution/zui-chang-you-xiao-gua-hao-by-leetcode-solution/
@@ -97,27 +99,28 @@ public class timu32 {
     
     
     /**
-     * 自己想的，使用栈，错的
+     * 自己模仿第一种方法做的
      * @param s
      * @return
      */
     public int longestValidParentheses(String s) {
-        Stack<Character> stack = new Stack<>();
-        int resCount=0;
-        for (int i=0; i<s.length() ;i++){
-            Character ch = s.charAt(i);
-            if (ch=='('){
-                stack.push(ch);
-            }else if (ch==')'){
-                if (!stack.isEmpty()){
-                    resCount=resCount+2;
-                    stack.pop();
+        int maxLength = 0;
+        LinkedList<Integer> list = new LinkedList();
+        list.addLast(-1);
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i) == '('){
+                list.addLast(i);
+            }else{
+                int left = list.removeLast();
+                if(list.isEmpty()){
+                    list.add(i);
+                }else{
+                    // 注意这里！！list.getLast()  分为 )()()  和)(((()) 代入就行了
+                    maxLength = Math.max(i - list.getLast(), maxLength);
                 }
             }
         }
-        return resCount;
-
+        return maxLength;
     }
-
 
 }

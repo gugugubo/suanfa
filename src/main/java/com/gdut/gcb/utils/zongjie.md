@@ -272,6 +272,14 @@ int BFS(Node start, Node target) {
 
 
 
+位运算
+
+\>>>为逻辑移位符，向右移n位，高位补0
+\>> 算数移位符，也是向右移n位，不同的是：正数高位补0，负数高位补1
+<< 移位符，向左移n位，低位补0
+
+
+
 
 
 ## 动态规划
@@ -306,9 +314,15 @@ for 状态1 in 状态1的所有取值：
    3. 编辑距离timu72     
    4. 最大子序和timu53
 2. 背包问题（一般多设一个状态）
-   1. 0-1背包问题（零钱数量有限）：[0-1背包问题](https://labuladong.gitee.io/algo/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98.html)  分割等和子集timu416
-   2. 完全背包问题（零钱数量无限）：零钱兑换timu518-ii        
+   1. 0-1背包问题（零钱数量有限）：[0-1背包问题](https://labuladong.gitee.io/algo/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98.html)  分割等和子集timu416  零钱兑换timu322-i    
+   2. 完全背包问题（零钱数量无限）：零钱兑换timu518-ii  （**跟0-1背包就是转移方程不一样，因为零钱数量无限**）      
 3. 坐标对：俄罗斯套娃信封问题timu354（按照左区间升序排序+右边区间降序排序）   + 贪心问题
+
+
+
+1. 转移方程，想跟前一个dp坐标的关系
+2. 先写出不是base case的情况
+3. 初始base case，根据不是base case的坐标，推算出base case
 
 
 
@@ -341,7 +355,7 @@ for 状态1 in 状态1的所有取值：
 
 ## 算法技巧
 
-1. 前缀和（**注意base case**）：  和为K的子数组likou.timu560   路径总和iii-likou.timu437   实现Trie-timu208
+1. 前缀和（**注意base case**）：  和为K的子数组likou.timu560   路径总和iii-likou.timu437   实现Trie-timu208  连续的子数组和timu523
 
 
 
@@ -363,6 +377,12 @@ for 状态1 in 状态1的所有取值：
 数学字符转换
 
 1. 字符串转换整数niuke.timu67/timu8    整数反转timu7    最大交换timu670    下一个排列timu31   移掉K位数字timu402（前导零）   最大数timu179（前导零）
+
+
+
+括号
+
+1. 最长有效括号timu32（栈，注意如何求最长的长度）   有效的括号timu20（栈）    括号生成timu22（递归和回溯）   有效的括号字符串timu678（两个栈）   基本计算器timu224(两个栈)
 
 
 
@@ -410,9 +430,13 @@ for 状态1 in 状态1的所有取值：
 
 
 
-括号
 
-1. 最长有效括号timu32
+
+
+
+ip
+
+1. 
 
 
 
@@ -434,13 +458,14 @@ for 状态1 in 状态1的所有取值：
        Comparable v = arr[l];
        // arr[l+1...i) <= v; arr(j...r] >= v
        int i = l+1, j = r;
+       // 4.true
        while( true ){
-           // 1.
+           // 1.注意这里是 i<=r
            while( i <= r && arr[i].compareTo(v) < 0 )
                i ++;
            while( j >= l+1 && arr[j].compareTo(v) > 0 )
                j --;
-           if( i >= j )
+           if( i > j )
                break;
            swap( arr, i, j );
            //2.

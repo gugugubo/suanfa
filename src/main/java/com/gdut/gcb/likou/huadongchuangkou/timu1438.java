@@ -29,7 +29,7 @@ import java.util.LinkedList;
  * [7] 最大绝对差 |7-7| = 0 <= 4. 
  * 因此，满足题意的最长子数组的长度为 2 。
  *
- * 来源：力扣（LeetCode）
+ * 来源：力 扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @Date 2021/3/8 17:36
@@ -74,5 +74,46 @@ public class timu1438 {
         return ret;
     }
 
+
+    public int longestSubarray2(int[] nums, int limit) {
+        LinkedList<Integer> maxList = new LinkedList();
+        LinkedList<Integer>  minList = new LinkedList();
+        int maxLength =0;
+        int right = 0;
+        int left = 0;
+        while(right< nums.length ){
+            while(!maxList.isEmpty() && maxList.getLast() < nums[right]){
+                maxList.removeLast();
+            }
+            while(!minList.isEmpty() && minList.getLast() > nums[right]){
+                minList.removeLast();
+            }
+            minList.addLast(nums[right]);
+            maxList.addLast(nums[right]);
+
+
+            while(!maxList.isEmpty() && !minList.isEmpty()  && maxList.getFirst() - minList.getFirst() > limit){
+                if(maxList.getFirst() == nums[left]){
+                    maxList.removeFirst();
+                }
+                if(minList.getFirst() == nums[left]){
+                    minList.removeFirst();
+                }
+                left++;
+            }
+            if(right - left + 1 > maxLength){
+                maxLength = right - left + 1;
+            }
+            right++;
+        }
+        return maxLength;
+    }
+    
+    public static void main(String[] args) {
+        timu1438 timu1438 = new timu1438();
+        int[] ints = new int[]{8,2,4,7};
+        timu1438.longestSubarray(ints,4);
+        timu1438.longestSubarray2(ints,4);
+    }
     
 }

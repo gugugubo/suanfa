@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * @Author 古春波
+ * @Author 古 春波
  * @Description 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
  * @Date 2020/9/15 21:51
  * @Version 2.0
@@ -23,7 +23,6 @@ public class timu59_1 {
      * @return
      */
     public int[] maxSlidingWindow(int[] nums, int k) {
-
         if(nums.length == 0){
             return new int[0];
         }
@@ -64,12 +63,45 @@ public class timu59_1 {
         return res;
     }
 
+
+    // 自己做的
+    public int[] maxSlidingWindow2(int[] nums, int k) {
+        if(nums.length == 0){
+            return new int[0];
+        }
+        // 存最终的结果
+        int[] res = new int[nums.length -k +1];
+        LinkedList<Integer> list = new LinkedList();
+        int i=0;
+        while(i<nums.length){
+            while(!list.isEmpty() && list.getLast() < nums[i]){
+                list.removeLast();
+            }
+            list.add(nums[i]);
+            if(i>=k-1){
+                res[i-k+1] = list.getFirst();
+                // 可能划出窗口了
+                if(nums[i-k+1] == list.getFirst()){
+                    list.removeFirst();
+                }
+            }
+            i++;
+        }
+        return res;
+    }
+    
+    
+    
+    
     public static void main(String[] args) {
 //        int[] nums = new int[]{1,3,-1,-3,5,3,6,7};[1,3,1,2,0,5]
 
-        int[] nums = new int[]{1,3,1,2,0,5};
+        int[] nums = new int[]{1,3,-1,-3,5,3,6,7};
+        int[] nums2 = new int[]{1,-1};
         int[] ints = new timu59_1().maxSlidingWindow(nums, 3);
+        int[] ints2 = new timu59_1().maxSlidingWindow2(nums, 3);
         System.out.println(ints);
+        System.out.println(ints2);
         for (int i = 0; i < ints.length; i++){
             System.out.print(ints[i]);
         }

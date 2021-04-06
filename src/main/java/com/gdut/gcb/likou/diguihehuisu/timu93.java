@@ -57,7 +57,7 @@ public class timu93 {
     public void recur(String s, int segId, int segStart, StringBuffer s1){
         // 已经遍历完了，并且达到了4个
         if (segStart == s.length() && segId==4){
-            res.add(s1.substring(0,s1.length()-1).toString());
+            res.add(s1.substring(0,s1.length()-1));
             return;
         }
         

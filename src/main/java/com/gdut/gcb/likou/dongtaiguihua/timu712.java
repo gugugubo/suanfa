@@ -19,7 +19,8 @@ package com.gdut.gcb.likou.dongtaiguihua;
  * @Date 2021/1/12 10:57
  * @Version 1.0
  **/
-public class  timu712 {
+public class  
+timu712 {
     public int minimumDeleteSum(String s1, String s2) {
         int text1Length = s1.length();
         int text2Length = s2.length();

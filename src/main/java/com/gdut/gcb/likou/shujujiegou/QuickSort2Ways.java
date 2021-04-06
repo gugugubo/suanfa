@@ -1,5 +1,7 @@
 package com.gdut.gcb.likou.shujujiegou;
 
+import java.util.Random;
+
 public class QuickSort2Ways {
 
     // 我们的算法类不允许产生任何实例
@@ -8,7 +10,6 @@ public class QuickSort2Ways {
     // 双路快速排序的partition
     // 返回p, 使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
     private static int partition(Comparable[] arr, int l, int r){
-
         // 随机在arr[l...r]的范围中, 选择一个数值作为标定点pivot
         swap( arr, l , (int)(Math.random()*(r-l+1))+l );
         Comparable v = arr[l];
@@ -25,7 +26,7 @@ public class QuickSort2Ways {
                 j --;
             // 对于上面的两个边界的设定, 有的同学在课程的问答区有很好的回答:)
             // 大家可以参考: http://coding.imooc.com/learn/questiondetail/4920.html
-            if( i >= j )
+            if( i > j )
                 break;
             swap( arr, i, j );
             i ++; 

@@ -73,7 +73,9 @@ public class  timu416 {
         System.out.println(b);
 
         int[] coins = new int[]{1,2,3,5};
+        int[] coins2 = new int[]{1,2,5};
         boolean b1 = new timu416().canPartition3(coins);
+        boolean b2 = new timu416().canPartition5(coins2);
         System.out.println(b1);
     }
 
@@ -188,5 +190,35 @@ public class  timu416 {
             }
         }
         return dp[sum/2];
+    }
+
+
+    public boolean canPartition5(int[] nums) {
+        int sum = getSum(nums);
+        if(sum % 2 ==1){
+            return false;
+        }
+        sum = sum /2;
+        boolean[][] dp =  new boolean[nums.length+1][sum +1];
+        for(int i=0; i<nums.length+1; i++){
+            dp[i][0]= true;
+        }
+        for(int i=1; i<nums.length+1; i++){
+            for(int j=1; j<sum+1; j++){
+                dp[i][j] = dp[i-1][j];
+                if(j-nums[i-1] >=0 && dp[i][j] ==false){
+                    dp[i][j] = dp[i-1][j-nums[i-1]];
+                }
+            }
+        }
+        return dp[nums.length][sum];
+    }
+
+    public int getSum (int[]nums ){
+        int sum = 0;
+        for(int i=0; i<nums.length ; i++){
+            sum +=nums[i];
+        }
+        return sum;
     }
 }

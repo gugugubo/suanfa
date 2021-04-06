@@ -20,6 +20,8 @@ package com.gdut.gcb.likou.weiyunsuan;
  **/
 public class timu191 {
 
+    
+
     /**
      * 掩码
      * @param n

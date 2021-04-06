@@ -1,4 +1,4 @@
-package com.gdut.gcb.likou.zifuchuan;
+package com.gdut.gcb.likou.diguihehuisu.kuohao;
 
 import java.util.Stack;
 

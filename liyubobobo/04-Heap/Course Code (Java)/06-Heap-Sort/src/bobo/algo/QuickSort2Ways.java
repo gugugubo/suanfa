@@ -13,7 +13,7 @@ public class QuickSort2Ways {
 
         // 随机在arr[l...r]的范围中, 选择一个数值作为标定点pivot
         swap( arr, l , (int)(Math.random()*(r-l+1))+l );
-
+        swap(arr, l, new Random().nextInt( r-l+1)+l);
         Comparable v = arr[l];
 
         // arr[l+1...i) <= v; arr(j...r] >= v

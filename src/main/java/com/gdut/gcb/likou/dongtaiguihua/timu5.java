@@ -132,7 +132,7 @@ public class timu5 {
     }
 
 
-    // 自己做的动态规划
+    // 3-23 自己做的动态规划
     public static String longestPalindrome5(String s) {
         int length = s.length();
         // 特判
@@ -150,6 +150,7 @@ public class timu5 {
                 if (s.charAt(i) != s.charAt(j)){
                     dp[i][j] = false;
                 }else {
+                    // 主要是为了防止 j = i+1 并且 j 和 i 的字符相等的时候，会进行i+1,j-1 这样i就大于j了
                     if (j-i<3){
                         dp[i][j] = true;
                     }else {
